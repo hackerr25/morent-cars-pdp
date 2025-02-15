@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const NotFound = () => {
     return (
-        <div className='text-center justify-content-center' style={{ marginBottom: "100px", marginTop: "100px" }}>
+        <div className='text-center justify-content-center' style={{ backgroundColor: "none", marginBottom: "10px", marginTop: "10px", padding: "80px" }}>
             <h3 className='text-primary mb-4'>Sorry this routes could not find :)</h3>
             <NavLink to={"/"} style={{
                 textDecoration: "none",
