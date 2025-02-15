@@ -12,7 +12,6 @@ const Navbar = () => {
     return (
         <div>
             <div className="container d-flex justify-content-between align-items-center py-2 px-2">
-                {/* Left side with logo and input */}
                 <div className="d-flex align-items-center">
                     <NavLink to={'/'}>
                         <div>
@@ -32,8 +31,6 @@ const Navbar = () => {
                         <TuneIcon style={{ marginLeft: "10px", position: "absolute", right: "10px", bottom: "8px", color: "#596780" }} />
                     </div>
                 </div>
-
-                {/* Right side with icons */}
                 <div className="d-flex gap-3 align-items-center">
                     <NavLink to={"/likedCars"} style={{ color: "black" }}>
                         {({ isActive }) => (
