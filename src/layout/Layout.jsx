@@ -9,7 +9,7 @@ const Layout = () => {
             <nav>
                 <Navbar />
             </nav>
-            <main className='container'>
+            <main className='container' style={{ backgroundColor: "#F6F7F9" }}>
                 <Outlet />
             </main>
             <footer>

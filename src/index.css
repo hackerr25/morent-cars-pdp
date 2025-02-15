@@ -11,6 +11,7 @@
     --color-categories: #90A3BF;
     --color-detailpage: #596780; 
     --color-home: #F6F7F9;
+    --color-red: #ED3F3F;
 }
 
 button,
@@ -79,4 +80,8 @@ img{
     color: var(--color-titles);
     font-size: 14px;
 
+}
+
+.popular-btn{
+    
 }

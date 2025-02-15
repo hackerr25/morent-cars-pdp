@@ -1,9 +1,10 @@
 import React from 'react'
+import PopularCars from '../popularCars/PopularCars'
 
 const Home = () => {
   return (
-    <div className='container px-0' style={{ backgroundColor: "#F6F7F9" }}>
-      sadlkasdjlakd
+    <div className=''>
+      <PopularCars />
     </div>
   )
 }
