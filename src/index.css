@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --color-primary: #3563E9;
+    --color-primary2: #54A6FF;
+    --color-text: #13131399;
+    --color-titles: #1A202C;
+    --color-categories: #90A3BF;
+    --color-detailpage: #596780; 
+}
+
+button,
+a,
+ul,
+li
+{
+  border: none;
+  outline: none;
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1300px;
+    padding-top: 40px;
+}
+
+.input-container input {
+    background: none;
+    border: 1px solid;
+    outline: none;
+    padding: 12px 20px;
+}
+  
