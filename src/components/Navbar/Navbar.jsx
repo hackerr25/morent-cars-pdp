@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
+import SettingsIcon from '@mui/icons-material/Settings';
 import morent from "../../assets/morent.png"
 
 const Navbar = () => {
@@ -23,13 +24,32 @@ const Navbar = () => {
                         borderRadius: "70px",
                         borderColor: "#C3D4E966",
                     }} />
+                    <SearchIcon style={{ marginLeft: "10px", position: "absolute" }} className='left-0 bottom-0' />
                 </div>
                 <div className="d-flex gap-5 align-items-center justify-content-center">
-                    <NavLink to={"/likedCars"} style={{ }}
+                    <NavLink to={"/likedCars"} style={{ color: "black" }}
                     >
                         {({ isActive }) => (
-                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "100%" }}>
-                                <FavoriteIcon sx={{ width: '20px', padding: "13px", height: "30px" }} />
+                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
+                                <FavoriteIcon sx={{
+                                    width: '30px', height: "30px", color: "#596780"
+                                }} />
+                            </button>
+                        )}
+                    </NavLink>
+                    <NavLink to={"/notification"} style={{ color: "" }}
+                    >
+                        {({ isActive }) => (
+                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
+                                <NotificationsIcon sx={{ width: '30px', height: "30px", color: "#596780" }} />
+                            </button>
+                        )}
+                    </NavLink>
+                    <NavLink to={"/settings"} style={{ color: "black" }}
+                    >
+                        {({ isActive }) => (
+                            <button className={isActive ? "active" : ""} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
+                                <SettingsIcon sx={{ width: '30px', height: "30px", color: "#596780" }} />
                             </button>
                         )}
                     </NavLink>
