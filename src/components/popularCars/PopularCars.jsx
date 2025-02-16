@@ -30,7 +30,7 @@ const PopularCars = () => {
 
 
     return (
-        <div className='container'>  
+        <div className='container'>
             <div className="d-flex align-items-center justify-content-between">
                 <p style={{
                     color: "#90A3BF",
@@ -50,10 +50,11 @@ const PopularCars = () => {
                 }}>View All</NavLink>
             </div>
             <div className="row mt-3">
-                {data.slice(8, 16).map((item) => (<div className="col-md-4" style={{
+                {data.slice(16).map((item) => (<div key={item.id} className="col-md-3" style={{
                     marginBottom: "30px"
+
                 }}>
-                    <div key={item.id} className="card h-100 py-2" style={{ width: "305px" }} onClick={() => handleCarCard(item.id)}>
+                    <div className="card h-100 py-2" style={{ width: "290px" }}>
                         <div className="card-body" >
                             <div className='d-flex justify-content-between align-items-center'>
                                 <h5 className="card-title" style={{
@@ -65,22 +66,24 @@ const PopularCars = () => {
                                     fontStyle: "normal",
                                     marginBottom: "0"
                                 }}>{item.name}</h5>
-                                <button className={"popular-btn"}>
+                                <button onClick={handleButtonClick} className={"popular-btn"}>
                                     <FavoriteBorderIcon style={{
-                                        width: '24px', height: "24px", color: "#596780"
+                                        borderRadius: "100%", backgroundColor: isActive ? "#ED3F3F" : "transparent",
+                                        width: '24px', height: "24px", color: isActive ? 'white' : '#596780'
                                     }} />
                                 </button>
                             </div>
-                            <p className="card-text" style={{
+                            <p onClick={() => handleCarCard(item.id)} className="card-text" style={{
                                 margin: "0",
                                 fontSize: "14px",
                                 color: "#90A3BF",
                                 lineHeight: "20px",
                                 fontWeight: 700,
-                                fontFamily: "Plus Jakarta Sans"
+                                fontFamily: "Plus Jakarta Sans",
+                                cursor: "pointer"
                             }}>{item.category}</p>
                         </div>
-                        <img src={item.img} alt="card" style={{ height: "72px", objectFit: "contain", cursor: "pointer" }} className='card-img-top mt-2 mb-5' onClick={() => handleCarCard(item.id)} />
+                        <img src={item.image} alt="card" style={{ width: "300px", height: "180px", objectFit: "cover", cursor: "pointer", paddingLeft: "15px", paddingRight: "16px" }} className='card-img-top mt-2 mb-4' onClick={() => handleCarCard(item.id)} />
                         <div className="card-body">
                             <div className="d-flex gap-3 align-items-center">
                                 <div className='d-flex align-items-center gap-1'>
@@ -137,7 +140,7 @@ const PopularCars = () => {
                                         fontWeight: 700,
                                         marginBottom: "0px"
                                     }}>
-                                        {item.price}$/
+                                        {item.price}.0$/
                                     </h6>
                                     <p style={{
                                         fontSize: "14px",
