@@ -8,7 +8,7 @@ const Main = () => {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
 
-    return <div className="container">
+    return <div className="container" style={{ paddingTop: "32px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", gap: "30px" }} className="main">
             <div style={{ backgroundColor: "#54A6FF", width: "650px", height: "350px", borderRadius: "10px" }} className="left_card">
                 <div style={{ width: "595px", paddingTop: "30px", paddingLeft: "30px" }} className="card_text">
@@ -16,9 +16,7 @@ const Main = () => {
                     <p style={{ color: "#ffff", fontSize: "15px", fontFamily: "Plus Jakarta Sans" }}>Ease of doing a car rental safely and <br /> reliably. Of course at a low price.</p>
                     <button style={{ padding: "10px 20px", backgroundColor: "#3563E9", fontFamily: "Plus Jakarta Sans", fontSize: "22px", color: "#ffff", borderRadius: "10px" }}>Rental Car</button>
                 </div>
-                <div style={{ position: "absolute", left: "310px", top: "345px" }} className="card_img">
-                    <img style={{ width: "360px", height: "120px" }} src={whiteCar} alt="car_1" />
-                </div>
+                <img style={{ width: "360px", height: "130px", paddingBottom: "20px", marginLeft: "200px" }} src={whiteCar} alt="car_1" />
             </div>
             <div style={{ backgroundColor: "#3563E9", width: "650px", height: "350px", borderRadius: "10px" }} className="right_card">
                 <div style={{ width: "595px", paddingTop: "30px", paddingLeft: "30px" }} className="card_text">
@@ -26,9 +24,7 @@ const Main = () => {
                     <p style={{ color: "#ffff", fontSize: "15px", fontFamily: "Plus Jakarta Sans" }}>Providing cheap car rental services <br /> and safe and comfortable facilities.</p>
                     <button style={{ padding: "10px 20px", backgroundColor: "#54A6FF", fontFamily: "Plus Jakarta Sans", fontSize: "22px", color: "#ffff", borderRadius: "10px" }}>Rental Car</button>
                 </div>
-                <div style={{ position: "absolute", left: "980px", top: "340px" }} className="card_img">
-                    <img style={{ width: "340px", height: "120px" }} src={grayCar} alt="car_2" />
-                </div>
+                <img style={{ width: "340px", height: "120px", marginLeft: '200px', paddingBottom: "20px" }} src={grayCar} alt="car_2" />
             </div>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", gap: "30px" }}>

@@ -7,24 +7,15 @@ import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import { CarContext } from '../../context/CarContext';
 
 
-const Recommended = () => {
-    const { addToLiked } = useContext(CarContext)
+const AllRecommended = () => {
+    const { addToCart, addToLiked } = useContext(CarContext);
     const [data, setData] = useState([])
-    const [activeIds, setActiveIds] = useState([]);
+    const [isActive, setIsActive] = useState(false);
     const navigate = useNavigate()
 
-    const handleButton = (id) => {
-        if (!activeIds.includes(id)) {
-            setActiveIds((prevIds) => [...prevIds, id]);
-        } else {
-            setActiveIds((prevIds) => prevIds.filter((item) => item !== id));
-        }
-        const car = data.find(item => item.id === id);
-        if (car) {
-            addToLiked(car);
-        }
+    const handleButtonClick = () => {
+        setIsActive(prevState => !prevState);
     };
-
 
     const handleCarCard = id => {
         navigate(`/cars/${id}`)
@@ -58,10 +49,19 @@ const Recommended = () => {
                     fontWeight: "600",
                     marginBottom: "0px",
                     marginTop: "20px"
-                }}>Recomendation Car</p>
+                }}>All Recomendation Car</p>
+                <NavLink to={"/"} style={{
+                    textDecoration: 'none',
+                    color: '#3563E9',
+                    fontSize: "16px",
+                    lineHeight: "20px",
+                    fontWeight: "600",
+                }}>
+                    Back to Home
+                </NavLink>
             </div>
             <div className="row mt-3">
-                {data.slice(5, 13).map((item) => (
+                {data.slice(5, 29).map((item) => (
                     <div key={item.id} className="col-md-3" style={{ marginBottom: "30px" }}>
                         <div className="card h-100 py-2" style={{ width: "290px", border: "none" }}>
                             <div className="card-body">
@@ -73,13 +73,11 @@ const Recommended = () => {
                                         fontWeight: 700,
                                         marginBottom: "0"
                                     }}>{splitText(item.name, 2)}</h5>
-                                    <button className={"popular-btn"} onClick={() => handleButton(item.id)}>
+                                    <button onClick={handleButtonClick} className={"popular-btn"}>
                                         <FavoriteBorderIcon style={{
                                             borderRadius: "100%",
-                                            backgroundColor: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
-                                            width: '24px',
-                                            height: "24px",
-                                            color: activeIds.includes(item.id) ? 'white' : '#596780'
+                                            backgroundColor: isActive ? "#ED3F3F" : "transparent",
+                                            width: '24px', height: "24px", color: isActive ? 'white' : '#596780'
                                         }} />
                                     </button>
                                 </div>
@@ -148,23 +146,9 @@ const Recommended = () => {
                     </div>
                 ))}
             </div>
-
-            <div className="d-flex justify-content-center" style={{ marginTop: "20px" }}>
-                <NavLink to={"/allRecommendation"} className={"btn btn-primary btn-sm"} style={{
-                    width: "150px",
-                    fontSize: "16px",
-                    color: "#FFFFFF",
-                    fontFamily: "Plus Jakarta Sans",
-                    fontWeight: 600,
-                    backgroundColor: "#3563E9",
-                    borderRadius: "4px",
-                    padding: "10px 20px",
-                    marginBottom: "40px"
-                }}>Show more</NavLink>
-            </div>
         </div>
     );
 
 }
 
-export default Recommended
+export default AllRecommended

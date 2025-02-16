@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 
-export const CartContext = createContext()
+export const CarContext = createContext()
 
 export const CarProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
@@ -28,5 +28,9 @@ export const CarProvider = ({ children }) => {
             return prev;
         })
     }
-
+    return (
+        <CarContext.Provider value={{ addToLiked, deleteCar, cart, cartCount }}>
+            {children}
+        </CarContext.Provider>
+    )
 }
