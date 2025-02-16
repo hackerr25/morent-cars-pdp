@@ -84,6 +84,18 @@ img{
 
 }
 
-.popular-btn{
-    
+.type-car{
+    color: var(--color-categories);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-family: "Plus Jakarta Sans";
+}
+
+.type-car2{
+    color: var(--color-detailpage);
+    font-family: "Plus Jakarta Sans";
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
 }

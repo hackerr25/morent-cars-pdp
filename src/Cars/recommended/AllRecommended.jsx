@@ -4,19 +4,26 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import { CarContext } from '../../context/CarContext';
+import { CarContext } from '../../utils/context/CarContext';
 
 
 const AllRecommended = () => {
-    const { addToCart, addToLiked } = useContext(CarContext);
+    const { addToLiked } = useContext(CarContext);
     const [data, setData] = useState([])
-    const [isActive, setIsActive] = useState(false);
+    const [activeIds, setActiveIds] = useState([]);
     const navigate = useNavigate()
 
-    const handleButtonClick = () => {
-        setIsActive(prevState => !prevState);
+    const handleButton = (id) => {
+        if (!activeIds.includes(id)) {
+            setActiveIds((prevIds) => [...prevIds, id]);
+        } else {
+            setActiveIds((prevIds) => prevIds.filter((item) => item !== id));
+        }
+        const car = data.find(item => item.id === id);
+        if (car) {
+            addToLiked(car);
+        }
     };
-
     const handleCarCard = id => {
         navigate(`/cars/${id}`)
     }
@@ -73,11 +80,13 @@ const AllRecommended = () => {
                                         fontWeight: 700,
                                         marginBottom: "0"
                                     }}>{splitText(item.name, 2)}</h5>
-                                    <button onClick={handleButtonClick} className={"popular-btn"}>
+                                    <button className={"popular-btn"} onClick={() => handleButton(item.id)}>
                                         <FavoriteBorderIcon style={{
                                             borderRadius: "100%",
-                                            backgroundColor: isActive ? "#ED3F3F" : "transparent",
-                                            width: '24px', height: "24px", color: isActive ? 'white' : '#596780'
+                                            backgroundColor: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
+                                            width: '24px',
+                                            height: "24px",
+                                            color: activeIds.includes(item.id) ? 'white' : '#596780'
                                         }} />
                                     </button>
                                 </div>

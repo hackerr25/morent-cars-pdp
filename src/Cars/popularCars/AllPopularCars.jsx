@@ -4,7 +4,7 @@ import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { CarContext } from '../../context/CarContext';
+import { CarContext } from '../../utils/context/CarContext';
 
 const AllPopularCars = () => {
     const { addToLiked } = useContext(CarContext)
@@ -84,9 +84,9 @@ const AllPopularCars = () => {
                                     marginBottom: "0"
                                 }}>{splitText(item.name, 1)}</h5>
                                 <button className={"popular-btn"} onClick={() => handleButton(item.id)}>
-                                    <FavoriteBorderIcon style={{
+                                    <FavoriteBorderIcon sx={{
                                         borderRadius: "100%",
-                                        backgroundColor: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
+                                        background: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
                                         width: '24px',
                                         height: "24px",
                                         color: activeIds.includes(item.id) ? 'white' : '#596780'

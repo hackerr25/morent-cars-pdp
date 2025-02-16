@@ -1,17 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import { CarContext } from '../../context/CarContext';
+import { CarContext } from '../../utils/context/CarContext';
 
 
-const Recommended = () => {
-    const { addToLiked } = useContext(CarContext)
-    const [data, setData] = useState([])
+const PopularCars = () => {
+    const { addToLiked } = useContext(CarContext);
+    const [data, setData] = useState([]);
     const [activeIds, setActiveIds] = useState([]);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    const handleCarCard = (id) => {
+        navigate(`/cars/${id}`);
+    };
 
     const handleButton = (id) => {
         if (!activeIds.includes(id)) {
@@ -25,25 +29,17 @@ const Recommended = () => {
         }
     };
 
-
-    const handleCarCard = id => {
-        navigate(`/cars/${id}`)
-    }
-
     const splitText = (text, count) => {
         const words = text.split(" ");
-        return words.length > count
-            ? words.slice(0, count).join(" ") + "..."
-            : text;
-    }
+        return words.length > count ? words.slice(0, count).join(" ") + "..." : text;
+    };
 
     useEffect(() => {
-        fetch(`https://912964747b35f950.mokky.dev/cars`)
-            .then(response => response.json())
-            .then(data => setData(data))
-            .catch(err => console.error("Error", err.message))
-    }, [])
-
+        fetch('https://912964747b35f950.mokky.dev/cars')
+            .then((response) => response.json())
+            .then((data) => setData(data))
+            .catch((err) => console.error("Error", err.message));
+    }, []);
 
     return (
         <div className='container'>
@@ -58,10 +54,17 @@ const Recommended = () => {
                     fontWeight: "600",
                     marginBottom: "0px",
                     marginTop: "20px"
-                }}>Recomendation Car</p>
+                }}>Popular Cars</p>
+                <NavLink to={"/allPopulars"} style={{
+                    textDecoration: 'none',
+                    color: '#3563E9',
+                    fontSize: "16px",
+                    lineHeight: "20px",
+                    fontWeight: "600",
+                }}>View All</NavLink>
             </div>
             <div className="row mt-3">
-                {data.slice(5, 13).map((item) => (
+                {data.slice(20, 24).map((item) => (
                     <div key={item.id} className="col-md-3" style={{ marginBottom: "30px" }}>
                         <div className="card h-100 py-2" style={{ width: "290px", border: "none" }}>
                             <div className="card-body">
@@ -89,38 +92,51 @@ const Recommended = () => {
                                     color: "#90A3BF",
                                     lineHeight: "20px",
                                     fontWeight: 700,
-                                    fontFamily: "Plus Jakarta Sans",
                                     cursor: "pointer"
                                 }}>{item.category}</p>
                             </div>
-                            <img src={item.image} alt="card" style={{ width: "300px", height: "180px", objectFit: "cover", cursor: "pointer", paddingLeft: "15px", paddingRight: "16px" }} className='card-img-top mt-2 mb-4' onClick={() => handleCarCard(item.id)} />
+                            <img
+                                src={item.image}
+                                alt="card"
+                                style={{
+                                    width: "300px", height: "180px", objectFit: "cover", cursor: "pointer", paddingLeft: "15px", paddingRight: "16px"
+                                }}
+                                className='card-img-top mt-2 mb-4'
+                                onClick={() => handleCarCard(item.id)}
+                            />
                             <div className="card-body">
                                 <div className="d-flex gap-3 align-items-center">
                                     <div className='d-flex align-items-center gap-1'>
-                                        <LocalGasStationIcon style={{ width: '24px', height: "24px", color: "#596780" }} />
+                                        <LocalGasStationIcon style={{
+                                            width: '24px', height: "24px", color: "#596780"
+                                        }} />
                                         <h6 style={{
                                             fontSize: "14px",
                                             color: "#90A3BF",
-                                            fontFamily: "Plus Jakarta Sans",
                                             fontWeight: 500,
+                                            marginBottom: "0px",
                                         }}>{item.gasoline}L</h6>
                                     </div>
                                     <div className='d-flex align-items-center gap-1'>
-                                        <DonutLargeIcon style={{ width: '24px', height: "24px", color: "#596780" }} />
+                                        <DonutLargeIcon style={{
+                                            width: '24px', height: "24px", color: "#596780"
+                                        }} />
                                         <h6 className="mb-0" style={{
                                             fontSize: "14px",
                                             color: "#90A3BF",
-                                            fontFamily: "Plus Jakarta Sans",
                                             fontWeight: 500,
+                                            marginBottom: "0px"
                                         }}>{item.categoryType}</h6>
                                     </div>
                                     <div className='d-flex align-items-center gap-2'>
-                                        <PeopleAltIcon style={{ width: '24px', height: "24px", color: "#596780" }} />
+                                        <PeopleAltIcon style={{
+                                            width: '24px', height: "24px", color: "#596780"
+                                        }} />
                                         <h6 className="" style={{
                                             fontSize: "14px",
                                             color: "#90A3BF",
-                                            fontFamily: "Plus Jakarta Sans",
                                             fontWeight: 500,
+                                            marginBottom: "0px"
                                         }}>{item.persons} People</h6>
                                     </div>
                                 </div>
@@ -129,11 +145,19 @@ const Recommended = () => {
                                         <h6 className='mb-0' style={{
                                             fontSize: "20px",
                                             color: "#1A202C",
-                                            fontFamily: "Plus Jakarta Sans",
                                             fontWeight: 700,
+                                            marginBottom: "0px"
                                         }}>
-                                            {item.price}.0$/ day
+                                            {item.price}.0$/
                                         </h6>
+                                        <p style={{
+                                            fontSize: "14px",
+                                            color: "#90A3BF",
+                                            fontWeight: 700,
+                                            marginBottom: "0px",
+                                            marginLeft: "4px",
+                                            marginTop: "4px"
+                                        }}> day</p>
                                     </div>
                                     <button className={"btn btn-primary btn-sm"} style={{
                                         fontSize: "16px",
@@ -141,6 +165,8 @@ const Recommended = () => {
                                         backgroundColor: "#3563E9",
                                         borderRadius: "4px",
                                         padding: "10px 20px",
+                                        marginLeft: "20px",
+                                        marginTop: "20px"
                                     }}>Rent Now</button>
                                 </div>
                             </div>
@@ -148,23 +174,8 @@ const Recommended = () => {
                     </div>
                 ))}
             </div>
-
-            <div className="d-flex justify-content-center" style={{ marginTop: "20px" }}>
-                <NavLink to={"/allRecommendation"} className={"btn btn-primary btn-sm"} style={{
-                    width: "150px",
-                    fontSize: "16px",
-                    color: "#FFFFFF",
-                    fontFamily: "Plus Jakarta Sans",
-                    fontWeight: 600,
-                    backgroundColor: "#3563E9",
-                    borderRadius: "4px",
-                    padding: "10px 20px",
-                    marginBottom: "40px"
-                }}>Show more</NavLink>
-            </div>
         </div>
     );
+};
 
-}
-
-export default Recommended
+export default PopularCars;

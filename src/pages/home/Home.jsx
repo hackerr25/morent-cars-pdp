@@ -1,7 +1,7 @@
 import React from 'react'
-import PopularCars from '../../components/popularCars/PopularCars'
 import Main from '../../components/main/Main'
-import Recommended from '../../components/recommended/Recommended'
+import PopularCars from '../../Cars/popularCars/PopularCars'
+import Recommended from './../../Cars/recommended/Recommended';
 
 const Home = () => {
   return (
