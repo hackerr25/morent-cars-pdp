@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-import DonutLargeIcon from '@mui/icons-material/DonutLarge';
-import { CarContext } from '../../utils/context/CarContext';
-
+import React, { useContext, useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import DonutLargeIcon from "@mui/icons-material/DonutLarge";
+import { CarContext } from "../../utils/context/CarContext";
 
 const AllRecommended = () => {
     const { addToLiked } = useContext(CarContext);
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
     const [activeIds, setActiveIds] = useState([]);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleButton = (id) => {
         if (!activeIds.includes(id)) {
@@ -19,32 +19,30 @@ const AllRecommended = () => {
         } else {
             setActiveIds((prevIds) => prevIds.filter((item) => item !== id));
         }
-        const car = data.find(item => item.id === id);
+        const car = data.find((item) => item.id === id);
         if (car) {
             addToLiked(car);
         }
     };
-    const handleCarCard = id => {
-        navigate(`/cars/${id}`)
-    }
+
+    const handleCarCard = (id) => {
+        navigate(`/cars/${id}`);
+    };
 
     const splitText = (text, count) => {
         const words = text.split(" ");
-        return words.length > count
-            ? words.slice(0, count).join(" ") + "..."
-            : text;
-    }
+        return words.length > count ? words.slice(0, count).join(" ") + "..." : text;
+    };
 
     useEffect(() => {
         fetch(`https://912964747b35f950.mokky.dev/cars`)
-            .then(response => response.json())
-            .then(data => setData(data))
-            .catch(err => console.error("Error", err.message))
-    }, [])
-
+            .then((response) => response.json())
+            .then((data) => setData(data))
+            .catch((err) => console.error("Error", err.message));
+    }, []);
 
     return (
-        <div className='container'>
+        <div className="container">
             <div className="d-flex align-items-center justify-content-between">
                 <p style={{
                     color: "#90A3BF",
@@ -56,7 +54,9 @@ const AllRecommended = () => {
                     fontWeight: "600",
                     marginBottom: "0px",
                     marginTop: "20px"
-                }}>All Recomendation Car</p>
+                }}>
+                    All Recommendation Cars
+                </p>
                 <NavLink to={"/"} style={{
                     textDecoration: 'none',
                     color: '#3563E9',
@@ -72,22 +72,26 @@ const AllRecommended = () => {
                     <div key={item.id} className="col-md-3" style={{ marginBottom: "30px" }}>
                         <div className="card h-100 py-2" style={{ width: "290px", border: "none" }}>
                             <div className="card-body">
-                                <div className='d-flex justify-content-between align-items-center'>
+                                <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title" style={{
                                         fontSize: "20px",
                                         color: "#1A202C",
                                         fontFamily: "Plus Jakarta Sans",
                                         fontWeight: 700,
                                         marginBottom: "0"
-                                    }}>{splitText(item.name, 2)}</h5>
-                                    <button className={"popular-btn"} onClick={() => handleButton(item.id)}>
-                                        <FavoriteBorderIcon style={{
-                                            borderRadius: "100%",
-                                            backgroundColor: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
-                                            width: '24px',
-                                            height: "24px",
-                                            color: activeIds.includes(item.id) ? 'white' : '#596780'
-                                        }} />
+                                    }}>
+                                        {splitText(item.name, 2)}
+                                    </h5>
+                                    <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
+                                        border: "none",
+                                        background: "transparent",
+                                        cursor: "pointer",
+                                    }}>
+                                        {activeIds.includes(item.id) ? (
+                                            <FavoriteIcon style={{ color: "#ED3F3F", width: "24px", height: "24px" }} />
+                                        ) : (
+                                            <FavoriteBorderIcon style={{ color: "#596780", width: "24px", height: "24px" }} />
+                                        )}
                                     </button>
                                 </div>
                                 <p onClick={() => handleCarCard(item.id)} className="card-text" style={{
@@ -100,10 +104,17 @@ const AllRecommended = () => {
                                     cursor: "pointer"
                                 }}>{item.category}</p>
                             </div>
-                            <img src={item.image} alt="card" style={{ width: "300px", height: "180px", objectFit: "cover", cursor: "pointer", paddingLeft: "15px", paddingRight: "16px" }} className='card-img-top mt-2 mb-4' onClick={() => handleCarCard(item.id)} />
+                            <img src={item.image} alt="card" style={{
+                                width: "300px",
+                                height: "180px",
+                                objectFit: "cover",
+                                cursor: "pointer",
+                                paddingLeft: "15px",
+                                paddingRight: "16px"
+                            }} className="card-img-top mt-2 mb-4" onClick={() => handleCarCard(item.id)} />
                             <div className="card-body">
                                 <div className="d-flex gap-3 align-items-center">
-                                    <div className='d-flex align-items-center gap-1'>
+                                    <div className="d-flex align-items-center gap-1">
                                         <LocalGasStationIcon style={{ width: '24px', height: "24px", color: "#596780" }} />
                                         <h6 style={{
                                             fontSize: "14px",
@@ -112,7 +123,7 @@ const AllRecommended = () => {
                                             fontWeight: 500,
                                         }}>{item.gasoline}L</h6>
                                     </div>
-                                    <div className='d-flex align-items-center gap-1'>
+                                    <div className="d-flex align-items-center gap-1">
                                         <DonutLargeIcon style={{ width: '24px', height: "24px", color: "#596780" }} />
                                         <h6 className="mb-0" style={{
                                             fontSize: "14px",
@@ -121,9 +132,9 @@ const AllRecommended = () => {
                                             fontWeight: 500,
                                         }}>{item.categoryType}</h6>
                                     </div>
-                                    <div className='d-flex align-items-center gap-2'>
+                                    <div className="d-flex align-items-center gap-2">
                                         <PeopleAltIcon style={{ width: '24px', height: "24px", color: "#596780" }} />
-                                        <h6 className="" style={{
+                                        <h6 style={{
                                             fontSize: "14px",
                                             color: "#90A3BF",
                                             fontFamily: "Plus Jakarta Sans",
@@ -131,24 +142,26 @@ const AllRecommended = () => {
                                         }}>{item.persons} People</h6>
                                     </div>
                                 </div>
-                                <div className="d-flex align-items-center justify-content-between mt-2" style={{ background: "none" }}>
-                                    <div className='d-flex align-items-center mt-3'>
-                                        <h6 className='mb-0' style={{
+                                <div className="d-flex align-items-center justify-content-between mt-2">
+                                    <div className="d-flex align-items-center mt-3">
+                                        <h6 style={{
                                             fontSize: "20px",
                                             color: "#1A202C",
                                             fontFamily: "Plus Jakarta Sans",
                                             fontWeight: 700,
                                         }}>
-                                            {item.price}.0$/ day
+                                            {item.price}.0$/day
                                         </h6>
                                     </div>
-                                    <button className={"btn btn-primary btn-sm"} style={{
+                                    <NavLink to="/car_pay" className="btn btn-primary btn-sm" style={{
                                         fontSize: "16px",
                                         color: "#FFFFFF",
                                         backgroundColor: "#3563E9",
                                         borderRadius: "4px",
                                         padding: "10px 20px",
-                                    }}>Rent Now</button>
+                                    }}>
+                                        Rent Now
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +170,6 @@ const AllRecommended = () => {
             </div>
         </div>
     );
+};
 
-}
-
-export default AllRecommended
+export default AllRecommended;

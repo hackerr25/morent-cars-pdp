@@ -1,13 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import TuneIcon from '@mui/icons-material/Tune';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import morent from "../../assets/morent.png"
-
+import filter from "../../assets/filter.png";
 const Navbar = () => {
     return (
         <div>
@@ -28,37 +27,38 @@ const Navbar = () => {
                             paddingLeft: "50px",
                             paddingRight: "40px"
                         }} />
-                        <TuneIcon style={{ marginLeft: "10px", position: "absolute", right: "10px", bottom: "8px", color: "#596780" }} />
+                        <img style={{ marginLeft: "10px", position: "absolute", right: "18px", bottom: "8px", color: "#596780",cursor: "pointer"
+                        }} src={filter} alt="filter" />
                     </div>
                 </div>
                 <div className="d-flex gap-3 align-items-center">
                     <NavLink to={"/likedCars"} style={{ color: "black" }}>
                         {({ isActive }) => (
-                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
+                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "50%", padding: "5px", border: "1px solid #C3D4E966"}}>
                                 <FavoriteIcon sx={{
-                                    width: '30px', height: "30px", color: "#596780"
+                                    width: '25px', height: "25px", color: "#596780"
                                 }} />
                             </button>
                         )}
                     </NavLink>
                     <NavLink to={"/notification"} style={{ color: "" }}>
                         {({ isActive }) => (
-                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
-                                <NotificationsIcon sx={{ width: '30px', height: "30px", color: "#596780" }} />
+                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "50%", padding: "5px", border: "1px solid #C3D4E966" }}>
+                                <NotificationsIcon sx={{ width: '25px', height: "25px", color: "#596780" }} />
                             </button>
                         )}
                     </NavLink>
                     <NavLink to={"/settings"} style={{ color: "black" }}>
                         {({ isActive }) => (
-                            <button className={isActive ? "active" : ""} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
-                                <SettingsIcon sx={{ width: '30px', height: "30px", color: "#596780" }} />
+                            <button className={isActive ? "active" : ""} style={{ position: "relative", borderRadius: "50%", padding: "5px", border: "1px solid #C3D4E966" }}>
+                                <SettingsIcon sx={{ width: '25px', height: "25px", color: "#596780" }} />
                             </button>
                         )}
                     </NavLink>
                     <NavLink to={"/profile"} style={{ color: "black" }}>
                         {({ isActive }) => (
-                            <button className={isActive ? "active" : ""} style={{ position: "relative", borderRadius: "100%", padding: "10px", border: "1px solid #C3D4E966" }}>
-                                <PersonIcon sx={{ width: '30px', height: "30px", color: "#596780" }} />
+                            <button className={isActive ? "active" : ""} style={{ position: "relative", borderRadius: "50%", padding: "5px", border: "1px solid #C3D4E966" }}>
+                                <PersonIcon sx={{ width: '25px', height: "25px", color: "#596780" }} />
                             </button>
                         )}
                     </NavLink>

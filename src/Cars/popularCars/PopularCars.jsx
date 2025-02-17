@@ -5,6 +5,7 @@ import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import { CarContext } from '../../utils/context/CarContext';
+import { Favorite } from '@mui/icons-material';
 
 
 const PopularCars = () => {
@@ -76,14 +77,16 @@ const PopularCars = () => {
                                         fontWeight: 700,
                                         marginBottom: "0"
                                     }}>{splitText(item.name, 2)}</h5>
-                                    <button className={"popular-btn"} onClick={() => handleButton(item.id)}>
-                                        <FavoriteBorderIcon style={{
-                                            borderRadius: "100%",
-                                            backgroundColor: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
-                                            width: '24px',
-                                            height: "24px",
-                                            color: activeIds.includes(item.id) ? 'white' : '#596780'
-                                        }} />
+                                  <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
+                                        border: "none",
+                                        background: "transparent",
+                                        cursor: "pointer",
+                                    }}>
+                                        {activeIds.includes(item.id) ? (
+                                            <Favorite style={{ color: "#ED3F3F", width: "24px", height: "24px" }} />
+                                        ) : (
+                                            <FavoriteBorderIcon style={{ color: "#596780", width: "24px", height: "24px" }} />
+                                        )}
                                     </button>
                                 </div>
                                 <p onClick={() => handleCarCard(item.id)} className="card-text" style={{
@@ -159,7 +162,7 @@ const PopularCars = () => {
                                             marginTop: "4px"
                                         }}> day</p>
                                     </div>
-                                    <button className={"btn btn-primary btn-sm"} style={{
+                                    <NavLink to="/car_pay" className={"btn btn-primary btn-sm"} style={{
                                         fontSize: "16px",
                                         color: "#FFFFFF",
                                         backgroundColor: "#3563E9",
@@ -167,7 +170,7 @@ const PopularCars = () => {
                                         padding: "10px 20px",
                                         marginLeft: "20px",
                                         marginTop: "20px"
-                                    }}>Rent Now</button>
+                                    }}>Rent Now</NavLink>
                                 </div>
                             </div>
                         </div>

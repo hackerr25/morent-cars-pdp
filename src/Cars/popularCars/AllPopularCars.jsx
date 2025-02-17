@@ -5,6 +5,7 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { CarContext } from '../../utils/context/CarContext';
+import { Favorite } from '@mui/icons-material';
 
 const AllPopularCars = () => {
     const { addToLiked } = useContext(CarContext)
@@ -43,6 +44,8 @@ const AllPopularCars = () => {
             .then(data => setData(data))
             .catch(err => console.error("Error", err.message))
     }, [])
+
+    console.log(data.length);      
 
 
     return (
@@ -83,15 +86,17 @@ const AllPopularCars = () => {
                                     fontStyle: "normal",
                                     marginBottom: "0"
                                 }}>{splitText(item.name, 1)}</h5>
-                                <button className={"popular-btn"} onClick={() => handleButton(item.id)}>
-                                    <FavoriteBorderIcon sx={{
-                                        borderRadius: "100%",
-                                        background: activeIds.includes(item.id) ? "#ED3F3F" : "transparent",
-                                        width: '24px',
-                                        height: "24px",
-                                        color: activeIds.includes(item.id) ? 'white' : '#596780'
-                                    }} />
-                                </button>
+                                 <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
+                                        border: "none",
+                                        background: "transparent",
+                                        cursor: "pointer",
+                                    }}>
+                                        {activeIds.includes(item.id) ? (
+                                            <Favorite style={{ color: "#ED3F3F", width: "24px", height: "24px" }} />
+                                        ) : (
+                                            <FavoriteBorderIcon style={{ color: "#596780", width: "24px", height: "24px" }} />
+                                        )}
+                                    </button>
                             </div>
                             <p onClick={() => handleCarCard(item.id)} className="card-text" style={{
                                 margin: "0",
@@ -174,7 +179,7 @@ const AllPopularCars = () => {
                                         marginTop: "4px"
                                     }}> day</p>
                                 </div>
-                                <button className={"btn btn-primary btn-sm"} style={{
+                                <NavLink to={"/car_pay"} className={"btn btn-primary btn-sm"} style={{
                                     fontSize: "16px",
                                     color: "#FFFFFF",
                                     fontFamily: "Plus Jakarta Sans",
@@ -186,7 +191,7 @@ const AllPopularCars = () => {
                                     padding: "10px 20px",
                                     marginLeft: "20px",
                                     marginTop: "20px"
-                                }}>Rent Now</button>
+                                }}>Rent Now</NavLink>
                             </div>
                         </div>
                     </div>
