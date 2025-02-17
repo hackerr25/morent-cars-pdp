@@ -77,7 +77,7 @@ const PopularCars = () => {
                                         fontWeight: 700,
                                         marginBottom: "0"
                                     }}>{splitText(item.name, 2)}</h5>
-                                  <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
+                                    <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
                                         border: "none",
                                         background: "transparent",
                                         cursor: "pointer",

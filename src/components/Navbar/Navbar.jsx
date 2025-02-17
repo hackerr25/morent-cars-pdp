@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -27,14 +27,15 @@ const Navbar = () => {
                             paddingLeft: "50px",
                             paddingRight: "40px"
                         }} />
-                        <img style={{ marginLeft: "10px", position: "absolute", right: "18px", bottom: "8px", color: "#596780",cursor: "pointer"
+                        <img style={{
+                            marginLeft: "10px", position: "absolute", right: "18px", bottom: "8px", color: "#596780", cursor: "pointer"
                         }} src={filter} alt="filter" />
                     </div>
                 </div>
                 <div className="d-flex gap-3 align-items-center">
                     <NavLink to={"/likedCars"} style={{ color: "black" }}>
                         {({ isActive }) => (
-                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "50%", padding: "5px", border: "1px solid #C3D4E966"}}>
+                            <button className={isActive ? "active" : "bg-#596780"} style={{ position: "relative", borderRadius: "50%", padding: "5px", border: "1px solid #C3D4E966" }}>
                                 <FavoriteIcon sx={{
                                     width: '25px', height: "25px", color: "#596780"
                                 }} />

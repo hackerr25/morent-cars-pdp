@@ -678,7 +678,6 @@ function CarPay() {
               <h4 style={{ margin: 0, fontSize: "16px", fontWeight: "600", color: "#111" }}>
                 Nissan GT – R
               </h4>
-              {/* Star Rating */}
               <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                 {"⭐".repeat(4)}
                 <span style={{ color: "#CCC", fontSize: "16px" }}>☆</span>
@@ -687,7 +686,6 @@ function CarPay() {
             </div>
           </div>
 
-          {/* Price Details */}
           <div style={{ borderTop: "1px solid #E5E7EB", paddingTop: "12px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
               <span style={{ fontSize: "14px", color: "#777" }}>Subtotal</span>

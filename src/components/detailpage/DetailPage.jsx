@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CarContext } from "../../utils/context/CarContext";
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Favorite } from "@mui/icons-material";
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const DetailPage = () => {
     } else {
       setActiveIds((prevIds) => prevIds.filter((item) => item !== id));
     }
-    const car = data?.find(item => item.id === id);
+    const car = data.find(item => item.id === id);
     if (car) {
       addToLiked(car);
     }
@@ -28,13 +29,9 @@ const DetailPage = () => {
       .catch(err => console.error("Error", err.message))
   }, [id])
 
-  if (!data) {
-    return <h2>Loading...</h2>
-  }
 
   return (
     <div className='container p-2 d-flex gap-4'>
-      {/* Card for Image */}
       <div className="card" style={{ width: "440px", border: "none" }}>
         <img
           src={data.image}
@@ -44,7 +41,6 @@ const DetailPage = () => {
         />
       </div>
 
-      {/* Card for Car Details */}
       <div className="card" style={{ width: "480px", padding: "20px", border: "none" }}>
         <div className="card-head" style={{ display: "flex", justifyContent: "space-between" }}>
           <h2 className='card-title' style={{
@@ -57,14 +53,16 @@ const DetailPage = () => {
             fontStyle: "normal",
             marginBottom: "0px"
           }}>{data.name}</h2>
-          <button className={"popular-btn"} onClick={() => handleButton(data.id)}>
-            <FavoriteBorderIcon style={{
-              borderRadius: "100%",
-              backgroundColor: activeIds.includes(data.id) ? "#ED3F3F" : "transparent",
-              width: '24px',
-              height: "24px",
-              color: activeIds.includes(data.id) ? 'white' : '#596780'
-            }} />
+          <button className="popular-btn" onClick={() => handleButton(data.id)} style={{
+            border: "none",
+            background: "transparent",
+            cursor: "pointer",
+          }}>
+            {activeIds.includes(data.id) ? (
+              <Favorite style={{ color: "#ED3F3F", width: "24px", height: "24px" }} />
+            ) : (
+              <FavoriteBorderIcon style={{ color: "#596780", width: "24px", height: "24px" }} />
+            )}
           </button>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
@@ -125,7 +123,8 @@ const DetailPage = () => {
                 fontSize: "14px",
                 color: "#90A3BF",
                 fontWeight: 700,
-              }}> day</p>
+                marginLeft: "0",
+              }}>day</p>
             </div>
             <button className={"btn btn-primary btn-sm"} style={{
               fontSize: "16px",
