@@ -1,0 +1,831 @@
+{
+    "cars": [
+    {
+        "id": 1,
+        "name": "Nissan GT-R",
+        "capacity": "Gasoline",
+        "image": "https://www.nissan.ca/content/dam/Nissan/Canada/Vehicles/gtr/2024/vap/vehicle-profile/2024-nissan-GTR-PremiumInteriorPackage-A54.png",
+        "reviews": 1500,
+        "desc": "NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the race track",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 80,
+        "persons": 2,
+        "price": 100,
+        "discount": 80,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 1,
+                "username": "Alex Stanton",
+                "userimg": "https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg",
+                "commt": "We are very happy with the service from the MORENT App. Morent has a low price and also a large variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite..",
+                "commnetDate": "22.07.2022"
+            },
+            {
+                "id": 2,
+                "username": "Skylar Dias",
+                "userimg": "https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg",
+                "commt": "We are greatly helped by the services of the MORENT Application. Morent has low prices and also a wide variety of cars with good and comfortable facilities. In addition, the service provided by the officers is also very friendly and very polite...",
+                "commnetDate": "20.07.2022"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Koenigsegg",
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/uploads/koenigsegg/koenigsegg_PNG11.png",
+        "reviews": 2000,
+        "desc": "Koenigsegg is a highly efficient and energy-saving device commonly used in the automotive industry. It is designed to quickly and easily refuel vehicles, saving both energy and time while ensuring safety.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 90,
+        "persons": 2,
+        "price": 99,
+        "carType": "Steering"
+    },
+    {
+        "id": 3,
+        "name": "Rolls - Royce",
+        "capacity": "Gasoline",
+        "reviews": 3000,
+        "image": "https://pngimg.com/d/rolls_royce_PNG7.png",
+        "desc": "A symbol of luxury and craftsmanship, Rolls-Royce vehicles are known for their impeccable design, powerful performance, and exceptional comfort, making them a top choice for those seeking the finest in automotive excellence.",
+        "category": "Sedan",
+        "categoryType": "Manual",
+        "gasoline": 70,
+        "persons": 4,
+        "price": 96,
+        "carType": "Jeep",
+        "comment": [
+            {
+                "id": 1,
+                "username": "John Micheal",
+                "userimg": "https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg",
+                "commt": "We are very happy via your this sedan because this sedan is very comfortable",
+                "commnetDate": "11.01.2023"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "All New Terios",
+        "capacity": "Gasoline",
+        "image": "https://lh6.googleusercontent.com/proxy/3qevBFc3A3UnrqfNDqQnbrSoNr9N_Z4upFtL7bqHEfbOaNBNiqbgOAHo3grSDo8OXjxrPcR-cSXwe7EaSou-auHmRphGpI6QOJcnHMVfBa9LydUYgMEecwaHnGwUefsTUQ",
+        "reviews": 2300,
+        "desc": "The All New Terios is a compact SUV offering a blend of modern design, off-road capability, and practicality.",
+        "category": "SUV",
+        "categoryType": "Manual",
+        "gasoline": 90,
+        "persons": 6,
+        "price": 74,
+        "carType": "JEEP"
+    },
+    {
+        "id": 5,
+        "name": "CR-V",
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/d/honda_PNG102931.png",
+        "reviews": 1200,
+        "desc": "The Honda CR-V is a popular compact crossover SUV known for its reliability, spacious interior, and efficient performance.",
+        "category": "SUV",
+        "categoryType": "Manual",
+        "gasoline": 80,
+        "persons": 6,
+        "price": 80,
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 1,
+                "username": "Alex Timmy",
+                "userimg": "https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg",
+                "commt": "It offers advanced safety features and a comfortable ride for families and travelers.",
+                "commnetDate": "01.11.2024"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "All New Rush",
+        "reviews": 1100,
+        "capacity": "Gasoline",
+        "image": "https://www.pusattoyotabandung.com/wp-content/uploads/2021/06/FDGHFGH.png",
+        "desc": "The All New Rush is a stylish and practical compact SUV designed for urban adventures.",
+        "category": "SUV",
+        "categoryType": "Manual",
+        "gasoline": 70,
+        "persons": 6,
+        "price": 80,
+        "discount": 72,
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 1,
+                "username": "Lily",
+                "userimg": "https://www.electroind.com/wp-content/uploads/2019/02/person2-1.jpg",
+                "commt": "It offers a spacious cabin, efficient fuel economy, and a smooth driving experience.",
+                "commnetDate": "01.10.2024"
+            },
+            {
+                "id": 2,
+                "username": "Tine Carry",
+                "userimg": "https://buildingsafety.campaign.gov.uk/wp-content/uploads/sites/157/2023/11/Larger-Image-21_RGB-540x520-2.png",
+                "commt": "It offers advanced safety features and a comfortable ride for families and travelers.",
+                "commnetDate": "22.04.2022"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "MG ZX Excite",
+        "capacity": "Electricity",
+        "reviews": 905,
+        "image": "https://images.netdirector.co.uk/gforces-auto/image/upload/w_318,h_239,q_auto,c_fill,f_auto,fl_lossy/auto-client/31cbe827ed90d0430a63abea490470ae/mg_zs_petrol_excite_blue.png",
+        "desc": "The MG ZX Excite is a sporty and dynamic SUV that offers impressive performance, advanced technology, and a comfortable interior.",
+        "category": "Hatchback",
+        "categoryType": "Manual",
+        "gasoline": 90,
+        "persons": 4,
+        "price": 74,
+        "carType": "Steering"
+    },
+    {
+        "id": 8,
+        "name": "New MG ZS",
+        "capacity": "Gasoline",
+        "reviews": 849,
+        "image": "https://web21st.imgix.net/assets/images/new-vehicles/mg/mg-zs-ev-2022-trophy-connect-long-range-arctic-white.png?w=380&auto=format",
+        "desc": "The New MG ZS is a compact SUV that combines modern features, sleek design, and great value.",
+        "category": "SUV",
+        "categoryType": "Manual",
+        "gasoline": 80,
+        "persons": 6,
+        "price": 80,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 1,
+                "username": "Ilhomjon Gayratov",
+                "userimg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdQLwDqDwd2JfzifvfBTFT8I7iKFFevcedYg&s",
+                "commt": "It provides excellent performance, safety features, and connectivity options for a comfortable driving experience.",
+                "commnetDate": "10.11.2020"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "MG ZX Exclusive",
+        "capacity": "Electricity",
+        "reviews": 733,
+        "image": "https://arslanrentacar.ae/wp-content/uploads/elementor/thumbs/MG-ZS-2024-qrn4a8ork302799369r4u73huudi40sy23z8lmsri4.png",
+        "desc": " The MG ZX Exclusive offers a premium SUV experience with top-tier features, luxurious interiors",
+        "category": "Hatchback",
+        "categoryType": "Manual",
+        "gasoline": 70,
+        "persons": 4,
+        "price": 80,
+        "discount": 76,
+        "carType": "Sedan"
+    },
+    {
+        "id": 10,
+        "name": "Lamborghini Aventador",
+        "reviews": 9822,
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/d/lamborghini_PNG102919.png",
+        "desc": "The Lamborghini Aventador is a high-performance sports car known for its stunning design and blistering speed.",
+        "category": "Sport",
+        "categoryType": "Auto",
+        "gasoline": 70,
+        "persons": 2,
+        "price": 400,
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 1,
+                "username": "John Doe",
+                "userimg": "https://linktoimage.com/john_doe.jpg",
+                "commt": "Incredible car with unmatched performance. It really stands out!",
+                "commnetDate": "15.02.2025"
+            },
+            {
+                "id": 2,
+                "username": "Sarah Lee",
+                "userimg": "https://linktoimage.com/sarah_lee.jpg",
+                "commt": "A dream car! The power and design are top-notch.",
+                "commnetDate": "20.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Ferrari F8 Tributo",
+        "capacity": "Gasoline",
+        "image": "https://vaisonpiste.com/231-home_default/ferrari-f8-tributo.jpg",
+        "reviews": 8330,
+        "desc": "The Ferrari F8 Tributo is a sleek, ultra-fast supercar designed for thrill-seekers and car enthusiasts.",
+        "category": "Sport",
+        "categoryType": "Auto",
+        "gasoline": 65,
+        "persons": 2,
+        "price": 350,
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 3,
+                "username": "Michael Clark",
+                "userimg": "https://linktoimage.com/michael_clark.jpg",
+                "commt": "The handling of this car is phenomenal. Absolutely love it.",
+                "commnetDate": "18.02.2025"
+            },
+            {
+                "id": 4,
+                "username": "Rachel Green",
+                "userimg": "https://linktoimage.com/rachel_green.jpg",
+                "commt": "Stunning design and extreme performance. A true Ferrari!",
+                "commnetDate": "22.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Porsche 911 Turbo",
+        "capacity": "Gasoline",
+        "image": "https://file.aiquickdraw.com/imgcompressed/img/compressed_f047e7ea2aa4b5e5997f9dcc43941b37.webp",
+        "reviews": 5400,
+        "desc": "The Porsche 911 Turbo combines luxury, speed, and exceptional handling for an unforgettable driving experience.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 60,
+        "persons": 2,
+        "price": 220,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 5,
+                "username": "Emily Stone",
+                "userimg": "https://linktoimage.com/emily_stone.jpg",
+                "commt": "Incredible driving experience! A perfect combination of power and comfort.",
+                "commnetDate": "23.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "name": "BMW M4",
+        "reviews": 9999,
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/d/bmw_PNG1682.png",
+        "desc": "The BMW M4 is a high-performance coupe that delivers both elegance and extreme power.",
+        "category": "Sport",
+        "categoryType": "Auto",
+        "gasoline": 75,
+        "persons": 2,
+        "price": 95,
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 6,
+                "username": "David Smith",
+                "userimg": "https://linktoimage.com/david_smith.jpg",
+                "commt": "Perfect blend of luxury and sport. Highly recommended!",
+                "commnetDate": "25.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Audi R8",
+        "capacity": "Gasoline",
+        "reviews": 3220,
+        "image": "https://d2ivfcfbdvj3sm.cloudfront.net/7fc965ab77efe6e0fa62e4ca1ea7673bb25946520c1e3d8e88cb10/stills_0640_png/MY2020/13737/13737_st0640_116.png",
+        "desc": "The Audi R8 is an exotic sports car known for its aggressive styling, stunning speed, and advanced tech.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 70,
+        "persons": 2,
+        "price": 210,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 7,
+                "username": "Jessica Williams",
+                "userimg": "https://linktoimage.com/jessica_williams.jpg",
+                "commt": "The R8 is a true masterpiece. Handling is perfect and the speed is exhilarating.",
+                "commnetDate": "28.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Mercedes-Benz",
+        "capacity": "Gasoline",
+        "reviews": 400,
+        "image": "https://www.mercedes-benz.co.uk/content/dam/hq/passengercars/cars/s-class/s-class-saloon-wv223-pi/modeloverview/09-2022/images/mercedes-benz-s-class-wv223-modeloverview-696x392-09-2022.png",
+        "desc": "The Mercedes-Benz S-Class represents luxury, with advanced technology, powerful performance, and elegant design.",
+        "category": "Sedan",
+        "categoryType": "Auto",
+        "gasoline": 75,
+        "persons": 4,
+        "price": 130,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 8,
+                "username": "Jake Thomas",
+                "userimg": "https://linktoimage.com/jake_thomas.jpg",
+                "commt": "The S-Class is everything you want in a luxury sedan. Comfort, performance, and features are unmatched.",
+                "commnetDate": "10.01.2025"
+            },
+            {
+                "id": 9,
+                "username": "Olivia Brown",
+                "userimg": "https://linktoimage.com/olivia_brown.jpg",
+                "commt": "Pure elegance! This sedan is a dream to drive.",
+                "commnetDate": "14.01.2025"
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Tesla Model",
+        "capacity": "Electricity",
+        "reviews": 8733,
+        "image": "https://pngimg.com/d/tesla_car_PNG53.png",
+        "desc": "The Tesla Model S is a cutting-edge electric vehicle that combines speed, sustainability, and advanced technology.",
+        "category": "Sedan",
+        "categoryType": "Elechter",
+        "persons": 5,
+        "price": 150,
+        "carType": "Electric",
+        "comment": [
+            {
+                "id": 10,
+                "username": "Benjamin Scott",
+                "userimg": "https://linktoimage.com/benjamin_scott.jpg",
+                "commt": "Amazing car with instant torque. It’s a game-changer for electric cars.",
+                "commnetDate": "18.01.2025"
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Chevrolet Corvette",
+        "capacity": "Gasoline",
+        "image": "https://www.eautolease.com/wp-content/uploads/2020/01/2024-chevrolet-corvette-stingray-sport-rwd-39869-side-E65F19-640x480.png",
+        "reviews": 3004,
+        "desc": "The Chevrolet Corvette is a classic American sports car that blends power, style, and performance.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 65,
+        "persons": 2,
+        "price": 85,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 11,
+                "username": "Sam Williams",
+                "userimg": "https://linktoimage.com/sam_williams.jpg",
+                "commt": "The Corvette never fails to impress. It has great performance and design.",
+                "commnetDate": "22.01.2025"
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Jaguar F-Type",
+        "capacity": "Gasoline",
+        "reviews": 2002,
+        "image": "https://www.pngplay.com/wp-content/uploads/13/Jaguar-F-Type-Free-Picture-PNG.png",
+        "desc": "The Jaguar F-Type is a sports car that offers thrilling performance, stunning looks, and a refined driving experience.",
+        "category": "Sport",
+        "categoryType": "Auto",
+        "gasoline": 70,
+        "persons": 2,
+        "price": 110,
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 12,
+                "username": "Charlotte Davis",
+                "userimg": "https://linktoimage.com/charlotte_davis.jpg",
+                "commt": "The F-Type is incredibly fun to drive, with amazing handling and speed.",
+                "commnetDate": "25.01.2025"
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Nissan 370Z",
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/d/nissan_PNG35.png",
+        "reviews": 4002,
+        "desc": "The Nissan 370Z is a legendary sports car that offers excellent value with thrilling performance and an iconic design.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 65,
+        "persons": 2,
+        "price": 55,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 13,
+                "username": "Ryan Lee",
+                "userimg": "https://linktoimage.com/ryan_lee.jpg",
+                "commt": "Great fun to drive and perfect for enthusiasts. It’s a fantastic car.",
+                "commnetDate": "30.01.2025"
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Aston Martin",
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/d/aston_martin_PNG39.png",
+        "reviews": 1004,
+        "desc": "The Aston Martin DB11 is a grand tourer that blends elegance with raw performance, a true masterpiece of automotive engineering.",
+        "category": "Coupe",
+        "categoryType": "Auto",
+        "gasoline": 85,
+        "persons": 2,
+        "price": 250,
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 14,
+                "username": "William Parker",
+                "userimg": "https://linktoimage.com/william_parker.jpg",
+                "commt": "Amazing car, the balance between luxury and performance is second to none!",
+                "commnetDate": "01.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Maserati Ghibli",
+        "capacity": "Gasoline",
+        "reviews": 4032,
+        "image": "https://crm.ferrajolirent.it/crms/upload/fotoVeicoli/cd7bbbc13d6733ae75d0a9dad52010b7.jpg",
+        "desc": "The Maserati Ghibli offers an exhilarating driving experience with its sleek design and robust engine performance.",
+        "category": "Sedan",
+        "categoryType": "Auto",
+        "gasoline": 80,
+        "persons": 4,
+        "price": 120,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 15,
+                "username": "Olivia Johnson",
+                "userimg": "https://linktoimage.com/olivia_johnson.jpg",
+                "commt": "A perfect blend of luxury and performance. Every ride is pure joy.",
+                "commnetDate": "05.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Bentley Continental",
+        "capacity": "Gasoline",
+        "reviews": 8443,
+        "image": "https://pngimg.com/d/bentley_PNG33.png",
+        "desc": "The Bentley Continental GT is the epitome of automotive luxury, with exceptional craftsmanship and world-class performance.",
+        "category": "Coupe",
+        "categoryType": "Auto",
+        "gasoline": 75,
+        "persons": 2,
+        "price": 300,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 16,
+                "username": "Mark Williams",
+                "userimg": "https://linktoimage.com/mark_williams.jpg",
+                "commt": "Exquisite design, amazing ride quality, and power – Bentley has nailed it again!",
+                "commnetDate": "10.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Land Rover",
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/d/land_rover_PNG4.png",
+        "reviews": 5321,
+        "desc": "The Range Rover is a luxury SUV known for its off-road capability, high-end features, and refined design.",
+        "category": "SUV",
+        "categoryType": "Auto",
+        "gasoline": 80,
+        "persons": 5,
+        "price": 130,
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 17,
+                "username": "Sophia Williams",
+                "userimg": "https://linktoimage.com/sophia_williams.jpg",
+                "commt": "Comfortable, stylish, and an absolute beast on the road!",
+                "commnetDate": "12.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "name": "Jaguar XE",
+        "capacity": "Gasoline",
+        "reviews": 4311,
+        "image": "https://www.pngplay.com/wp-content/uploads/13/Jaguar-XE-Project-8-Transparent-Background.png",
+        "desc": "The Jaguar XE offers a blend of dynamic driving performance and elegance, ideal for those seeking both excitement and luxury.",
+        "category": "Sedan",
+        "categoryType": "Manual",
+        "gasoline": 70,
+        "persons": 4,
+        "price": 95,
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 18,
+                "username": "Lucas Anderson",
+                "userimg": "https://linktoimage.com/lucas_anderson.jpg",
+                "commt": "Great car for those who want style and performance. It drives like a dream.",
+                "commnetDate": "14.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Ford Mustang",
+        "reviews": 6320,
+        "capacity": "Gasoline",
+        "image": "https://www.vdm.ford.com/content/dam/na/ford/en_us/images/mustang/2025/jellybeans/Ford_Mustang_2025_400A_PJS_889_89W_13R_COU_64V_99F_44X_GT_YZTAC_DEFAULT_EXT_4.png",
+        "desc": "The Ford Mustang is an iconic American muscle car that delivers powerful performance and a thrilling driving experience.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 85,
+        "persons": 2,
+        "price": 50,
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 19,
+                "username": "James Taylor",
+                "userimg": "https://linktoimage.com/james_taylor.jpg",
+                "commt": "Nothing beats the roar of the Mustang. It's raw power and pure joy!",
+                "commnetDate": "15.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Chevrolet Camaro",
+        "capacity": "Gasoline",
+        "image": "https://pngimg.com/uploads/camaro/small/camaro_PNG31.png",
+        "reviews": 8221,
+        "desc": "The Chevrolet Camaro is an American muscle car that offers a powerful engine and aggressive styling.",
+        "category": "Sport",
+        "categoryType": "Manual",
+        "gasoline": 80,
+        "persons": 2,
+        "price": 60,
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 20,
+                "username": "Benjamin Davis",
+                "userimg": "https://linktoimage.com/benjamin_davis.jpg",
+                "commt": "Power, speed, and style – the Camaro is all about muscle and looks.",
+                "commnetDate": "16.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "name": "Audi Q7",
+        "capacity": "Gasoline",
+        "reviews": 5211,
+        "desc": "The Audi Q7 is a luxury SUV with a spacious cabin, advanced tech, and top-tier performance, ideal for family adventures.",
+        "category": "SUV",
+        "categoryType": "Auto",
+        "gasoline": 75,
+        "persons": 7,
+        "price": 95,
+        "image": "https://cdn.nwi-ms.com/media/sk/A/mc/4MQCB220/model/front.webp?F=0E0E&P=EI&M=1BK@1D9@1G1@1S1@1XP@41K@4L6@5TG@5ZC@6E6@6XL@7X5@9ZE@GB1@KA2@N5K@PV3@PXC@QL5@QQ2@WQS&background=transparent",
+        "carType": "Sedan",
+        "comment": [
+            {
+                "id": 21,
+                "username": "Chloe Adams",
+                "userimg": "https://linktoimage.com/chloe_adams.jpg",
+                "commt": "Fantastic family car! Comfort and space are unbeatable.",
+                "commnetDate": "17.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Hyundai Tucson",
+        "capacity": "Gasoline",
+        "reviews": 929,
+        "desc": "The Hyundai Tucson is a compact SUV that combines modern features, efficiency, and a comfortable ride.",
+        "category": "SUV",
+        "categoryType": "Auto",
+        "gasoline": 70,
+        "persons": 5,
+        "price": 55,
+        "image": "https://pngimg.com/d/hyundai_PNG11224.png",
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 22,
+                "username": "Emma Martinez",
+                "userimg": "https://linktoimage.com/emma_martinez.jpg",
+                "commt": "Very reliable and comfortable SUV, great for both city and highway driving.",
+                "commnetDate": "18.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Toyota Corolla",
+        "capacity": "Gasoline",
+        "reviews": 1200,
+        "desc": "The Toyota Corolla is a compact sedan known for its reliability, fuel efficiency, and comfortable driving experience.",
+        "category": "SUV",
+        "categoryType": "Auto",
+        "gasoline": 50,
+        "persons": 5,
+        "price": 30,
+        "image": "https://content.toyota.com.ph/uploads/prices/789/002_789_1735861347058_000.png",
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 23,
+                "username": "John Doe",
+                "userimg": "https://linktoimage.com/john_doe.jpg",
+                "commt": "A very dependable car, perfect for everyday use. The fuel economy is excellent.",
+                "commnetDate": "18.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "name": "BMW X5",
+        "capacity": "Gasoline",
+        "reviews": 9505,
+        "desc": "The BMW X5 is a luxury mid-size SUV that offers powerful performance, advanced features, and a premium interior.",
+        "category": "Sedan",
+        "categoryType": "Auto",
+        "gasoline": 80,
+        "persons": 5,
+        "price": 70,
+        "image": "https://alcf.s3.us-west-1.amazonaws.com/_custom/2024/bmw/x5/2024%20xdrive%2050e.png",
+        "carType": "JEEP",
+        "comment": [
+            {
+                "id": 24,
+                "username": "Sarah Lee",
+                "userimg": "https://linktoimage.com/sarah_lee.jpg",
+                "commt": "The performance is outstanding, and the interior is luxurious. It makes every drive a pleasure.",
+                "commnetDate": "18.02.2025"
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Ford F-150",
+        "capacity": "Gasoline",
+        "reviews": 1450,
+        "desc": "The Ford F-150 is a full-size pickup truck known for its towing capabilities, durability, and off-road performance.",
+        "category": "Sedan",
+        "categoryType": "Auto",
+        "gasoline": 100,
+        "persons": 5,
+        "price": 45,
+        "image": "https://pngimg.com/d/pickup_truck_PNG16318.png",
+        "carType": "Steering",
+        "comment": [
+            {
+                "id": 25,
+                "username": "Michael Brown",
+                "userimg": "https://linktoimage.com/michael_brown.jpg",
+                "commt": "This truck is a beast! Perfect for tough jobs, and it’s surprisingly comfortable for long drives.",
+                "commnetDate": "18.02.2025"
+            }
+        ],
+        "type": [
+            {
+                "name": "Sedan",
+                "count": 22
+            },
+            {
+                "name": "SUV",
+                "count": 19
+            },
+            {
+                "name": "Coupe",
+                "count": 20
+            },
+            {
+                "name": "Hatchbak",
+                "count": 15
+            },
+            {
+                "name": "MPV",
+                "count": 13
+            }
+        ],
+        "person": [
+            {
+                "person": "2 Person",
+                "cars": 10
+            },
+            {
+                "person": "4 Person",
+                "cars": 12
+            },
+            {
+                "person": "6 Person",
+                "cars": 4
+            },
+            {
+                "person": "8 or More",
+                "cars": 5
+            }
+        ]
+    }
+],
+
+    "newCars": [
+    {
+        "id": 32,
+        "name": "Cobalt",
+        "capacity": "Gasoline",
+        "reviews": 9002,
+        "desc": "O'zbekiston ishlab chiqaruvchisi GM Uzbekistan tomonidan ishlab chiqarilgan Cobalt ixcham va qulay sedan modeli bo'lib, shahar sharoitida haydash uchun juda mos.",
+        "category": "SUV",
+        "categoryType": "Auto",
+        "gasoline": 50,
+        "persons": 5,
+        "price": 80,
+        "image": "https://pngimg.com/uploads/chevrolet/%D1%81hevrolet_PNG15.png",
+        "carType": "JEEP"
+    },
+    {
+        "id": 33,
+        "name": "Nexia",
+        "capacity": "Gasoline",
+        "reviews": 7500,
+        "desc": "Nexia - bu GM Uzbekistan tomonidan ishlab chiqarilgan klassik sedan modeli bo'lib, uzoq yillar davomida O'zbekiston bozorida eng mashhur avtomobillardan biri bo'lib kelgan.",
+        "category": "Sedan",
+        "categoryType": "Auto",
+        "gasoline": 45,
+        "persons": 5,
+        "price": 70,
+        "image": "https://pngimg.com/d/toyota_PNG1951.png",
+        "carType": "Sedan"
+    },
+    {
+        "id": 34,
+        "name": "Spark",
+        "capacity": "Gasoline",
+        "reviews": 6800,
+        "desc": "Spark ixcham va tejamkor avtomobil bo'lib, shahar sharoitida qulay harakatlanish imkoniyatini beradi. GM Uzbekistan tomonidan ishlab chiqarilgan.",
+        "category": "Hatchback",
+        "categoryType": "Auto",
+        "gasoline": 40,
+        "persons": 4,
+        "price": 60,
+        "image": "https://pngimg.com/d/daewoo_PNG68.png",
+        "carType": "Hatchback"
+    },
+    {
+        "id": 35,
+        "name": "Malibu",
+        "capacity": "Gasoline",
+        "reviews": 8500,
+        "desc": "Malibu - bu GM Uzbekistan tomonidan ishlab chiqarilgan premium sedan modeli bo'lib, zamonaviy dizayni va qulay interyeri bilan ajralib turadi.",
+        "category": "Sedan",
+        "categoryType": "Auto",
+        "gasoline": 55,
+        "persons": 5,
+        "price": 90,
+        "image": "https://pngimg.com/uploads/chevrolet/%D1%81hevrolet_PNG149.png",
+        "carType": "Sedan"
+    },
+    {
+        "id": 36,
+        "name": "Tracker",
+        "capacity": "Gasoline",
+        "reviews": 9200,
+        "desc": "Tracker - bu GM Uzbekistan tomonidan ishlab chiqarilgan kichik SUV modeli bo'lib, shahar va yo'l sharoitida yaxshi ishlashi bilan mashhur.",
+        "category": "SUV",
+        "categoryType": "Auto",
+        "gasoline": 60,
+        "persons": 5,
+        "price": 100,
+        "image": "https://chevrolet.uz/assets/images/tracker/colors/03.png",
+        "carType": "SUV"
+    }
+]
+}

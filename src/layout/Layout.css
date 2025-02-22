@@ -1,0 +1,18 @@
+/* Default Light Mode */
+.layout-main {
+    background-color: #F6F7F9;
+    color: #1E293B;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Dark Mode */
+.dark-mode .layout-main {
+    /* background-color: #1E293B; */
+    color: #F6F7F9;
+}
+
+.dark-mode footer {
+    /* background-color: #0F172A; */
+    color: #F6F7F9;
+}

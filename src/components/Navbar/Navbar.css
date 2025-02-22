@@ -1,0 +1,30 @@
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.dark .navbar-container {
+    background-color: #1A202C; /* Dark mode background */
+}
+
+.navbar-container .input-container input {
+    width: 100%;
+    max-width: 400px;
+}
+
+.navbar-container .badge {
+    background: #FF4423;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    border-radius: 10px;
+    font-size: 10px;
+    padding: 3px 6px;
+    color: white;
+}

@@ -1,0 +1,13 @@
+.dark .container {
+  color: white;
+  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+.leftDiv {
+  background-color: white;
+  color: #13131399;
+}
+
+.dark .leftDiv {
+  background-color: #212B3D; /* Dark mode background */
+}
