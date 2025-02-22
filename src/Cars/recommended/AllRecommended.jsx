@@ -6,10 +6,11 @@ import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import { CarContext } from "../../utils/context/CarContext";
+import useFetch from "../../utils/hook/useFetch";
 
 const AllRecommended = () => {
     const { addToLiked } = useContext(CarContext);
-    const [data, setData] = useState([]);
+    const { data } = useFetch(`cars`)
     const [activeIds, setActiveIds] = useState([]);
     const navigate = useNavigate();
 
@@ -34,15 +35,9 @@ const AllRecommended = () => {
         return words.length > count ? words.slice(0, count).join(" ") + "..." : text;
     };
 
-    useEffect(() => {
-        fetch(`https://912964747b35f950.mokky.dev/cars`)
-            .then((response) => response.json())
-            .then((data) => setData(data))
-            .catch((err) => console.error("Error", err.message));
-    }, []);
 
     return (
-        <div className="container">
+        <div className="container" style={{ marginTop: "75px" }}>
             <div className="d-flex align-items-center justify-content-between">
                 <p style={{
                     color: "#90A3BF",
@@ -68,14 +63,13 @@ const AllRecommended = () => {
                 </NavLink>
             </div>
             <div className="row mt-3">
-                {data.slice(5, 29).map((item) => (
+                {data.slice(5, 28).map((item) => (
                     <div key={item.id} className="col-md-3" style={{ marginBottom: "30px" }}>
                         <div className="card h-100 py-2" style={{ width: "290px", border: "none" }}>
                             <div className="card-body">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <h5 className="card-title" style={{
                                         fontSize: "20px",
-                                        color: "#1A202C",
                                         fontFamily: "Plus Jakarta Sans",
                                         fontWeight: 700,
                                         marginBottom: "0"
@@ -142,11 +136,10 @@ const AllRecommended = () => {
                                         }}>{item.persons} People</h6>
                                     </div>
                                 </div>
-                                <div className="d-flex align-items-center justify-content-between mt-2">
-                                    <div className="d-flex align-items-center mt-3">
+                                <div className="d-flex align-items-center justify-content-between mt-3">
+                                    <div className="d-flex align-items-center">
                                         <h6 style={{
                                             fontSize: "20px",
-                                            color: "#1A202C",
                                             fontFamily: "Plus Jakarta Sans",
                                             fontWeight: 700,
                                         }}>

@@ -6,11 +6,12 @@ import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { CarContext } from '../../utils/context/CarContext';
 import { Favorite } from '@mui/icons-material';
+import useFetch from '../../utils/hook/useFetch';
 
 const AllPopularCars = () => {
     const { addToLiked } = useContext(CarContext)
-    const [data, setData] = useState([])
     const [activeIds, setActiveIds] = useState([]);
+    const { data } = useFetch(`cars`)
     const navigate = useNavigate()
 
 
@@ -38,18 +39,8 @@ const AllPopularCars = () => {
     }
 
 
-    useEffect(() => {
-        fetch(`https://912964747b35f950.mokky.dev/cars`)
-            .then(response => response.json())
-            .then(data => setData(data))
-            .catch(err => console.error("Error", err.message))
-    }, [])
-
-    console.log(data.length);      
-
-
     return (
-        <div className='container'>
+        <div className='container' style={{ marginTop: "75px" }}>
             <div className="d-flex justify-content-between align-items-center">
                 <p style={{
                     color: "#90A3BF",
@@ -79,24 +70,23 @@ const AllPopularCars = () => {
                             <div className='d-flex justify-content-between align-items-center'>
                                 <h5 className="card-title" style={{
                                     fontSize: "20px",
-                                    color: "#1A202C",
                                     fontFamily: "Plus Jakarta Sans",
                                     fontOpticalSizing: "auto",
                                     fontWeight: 700,
                                     fontStyle: "normal",
                                     marginBottom: "0"
                                 }}>{splitText(item.name, 1)}</h5>
-                                 <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
-                                        border: "none",
-                                        background: "transparent",
-                                        cursor: "pointer",
-                                    }}>
-                                        {activeIds.includes(item.id) ? (
-                                            <Favorite style={{ color: "#ED3F3F", width: "24px", height: "24px" }} />
-                                        ) : (
-                                            <FavoriteBorderIcon style={{ color: "#596780", width: "24px", height: "24px" }} />
-                                        )}
-                                    </button>
+                                <button className="popular-btn" onClick={() => handleButton(item.id)} style={{
+                                    border: "none",
+                                    background: "transparent",
+                                    cursor: "pointer",
+                                }}>
+                                    {activeIds.includes(item.id) ? (
+                                        <Favorite style={{ color: "#ED3F3F", width: "24px", height: "24px" }} />
+                                    ) : (
+                                        <FavoriteBorderIcon style={{ color: "#596780", width: "24px", height: "24px" }} />
+                                    )}
+                                </button>
                             </div>
                             <p onClick={() => handleCarCard(item.id)} className="card-text" style={{
                                 margin: "0",
@@ -123,7 +113,7 @@ const AllPopularCars = () => {
                                         lineHeight: "21px",
                                         fontWeight: 500,
                                         marginBottom: "0px",
-                                    }}>{item.gasoline}L</h6>
+                                    }}>{item.gasoline ? item.gasoline : "0"}L</h6>
                                 </div>
                                 <div className='d-flex align-items-center gap-1'>
                                     <DonutLargeIcon style={{
@@ -158,7 +148,6 @@ const AllPopularCars = () => {
                                 <div className='d-flex align-items-center mt-3'>
                                     <h6 className='mb-0' style={{
                                         fontSize: "20px",
-                                        color: "#1A202C",
                                         fontFamily: "Plus Jakarta Sans",
                                         fontOpticalSizing: "auto",
                                         lineHeight: "25px",

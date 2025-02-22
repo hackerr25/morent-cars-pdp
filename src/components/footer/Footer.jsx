@@ -1,6 +1,7 @@
 import React from 'react'
 import morent from "../../assets/morent.png"
 import { NavLink } from 'react-router-dom'
+import "./Footer.css"
 
 const Footer = () => {
     return (
@@ -10,7 +11,7 @@ const Footer = () => {
                 <div className="footer-left d-flex flex-column align-items-start">
                     <NavLink className="footer-logo d-flex flex-column align-items-start">
                         <img src={morent} alt="logo" style={{ width: "100px" }} />
-                        <p className='footer-text mt-2' style={{ textDecoration: "none", color: "#13131399" }}>Our vision is to provide convenience <br /> and help increase your sales business.</p>
+                        <p className='footer-text mt-2' style={{ textDecoration: "none" }}>Our vision is to provide convenience <br /> and help increase your sales business.</p>
                     </NavLink>
                 </div>
 
@@ -47,7 +48,7 @@ const Footer = () => {
             </div>
             <hr style={{ maxWidth: "1300px", margin: "0 auto" }} />
             <div className="container footer-bottom justify-content-between d-flex">
-                <h5 className='footer-text' style={{ color: "#1A202C" }}><a href="#f">2022 MORENT. All rights reserved</a></h5>
+                <h5 className='footer-text'><a href="#f">2022 MORENT. All rights reserved</a></h5>
                 <div className="footer-bottom-right d-flex gap-3">
                     <h5 className='footer-text'><a href="#privacy"> Privacy & Policy</a></h5>
                     <h5 className='footer-text'><a href="#terms">Terms & Condition</a></h5>

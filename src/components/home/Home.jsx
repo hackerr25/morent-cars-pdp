@@ -9,7 +9,6 @@ const Home = () => {
       <Main />
       <PopularCars />
       <Recommended />
-      <p>Github pull request</p>
     </div>
   )
 }

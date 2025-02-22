@@ -1,0 +1,40 @@
+/* Light mode styles */
+.footer-section {
+    background-color: #F8FAFC;
+    color: #1E293B;
+}
+
+.footer-logo img {
+    filter: brightness(1);
+}
+
+.footer-text {
+    color:#1A202C;
+}
+.footer-list-text a {
+    color: #1A202C;
+    text-decoration: none;
+}
+
+.footer-bottom a{
+    color: #1A202C;
+}
+
+/* Dark mode styles */
+.dark .footer-section {
+    background-color: #1E293B;
+    color: #E2E8F0;
+}
+
+.dark .footer-logo img {
+    filter: brightness(0.8);
+}
+
+.dark .footer-list-text a {
+    color: #94A3B8;
+}
+
+.dark .footer-bottom {
+    background-color: #334155;
+    color: #E2E8F0;
+}

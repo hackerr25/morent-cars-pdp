@@ -1,0 +1,55 @@
+/* light mode */
+.left_card {
+    background-color: #54A6FF;
+}
+
+.right_card {
+    background-color: #3563E9;
+}
+
+.left_card h1, .left_card p, .right_card h1, .right_card p {
+    color: #fff;
+}
+
+.left_card button {
+    background-color: #3563E9;
+    color: white;
+}
+
+.right_card button {
+    background-color: #54A6FF;
+    color: white;
+}
+
+/* dark */
+.dark .left_card {
+    background-color: #1E293B;
+    border-color: #334155;
+}
+
+.dark .right_card {
+    background-color: #334155;
+}
+
+.dark .left_card h1, .dark .left_card p, .dark .right_card h1, .dark .right_card p {
+    color: #E2E8F0;
+}
+
+.dark .left_card button {
+    background-color: #64748B;
+    color: #E2E8F0;
+}
+
+.dark .right_card button {
+    background-color: #475569;
+    color: #E2E8F0;
+}
+
+.dark select, .dark label {
+    color: #E2E8F0;
+}
+
+.dark .labelDiv select {
+    background-color: #1E293B;
+    border-color: #334155;
+}

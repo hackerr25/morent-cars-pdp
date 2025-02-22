@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+
 :root{
     --color-primary: #3563E9;
     --color-primary2: #54A6FF;
@@ -12,6 +16,59 @@
     --color-detailpage: #596780; 
     --color-home: #F6F7F9;
     --color-red: #ED3F3F;
+}
+h6{
+    margin-bottom: 0;
+}
+
+html.dark {
+    background-color: #1a202c;
+    color: white;
+}
+
+.dark body {
+    background-color: #1a202c;
+    color: white;
+}
+
+.dark .footer-list-text, 
+.dark .footer-text, 
+.dark .footer-text a, 
+.dark .type-car, 
+.dark .type-car2, 
+.dark .labelDiv, 
+.dark .card,
+.dark .card-body h6 {
+    color: white;
+}
+.dark .container {
+    background: #1a202c;
+    color: white;
+}
+
+.dark .container * {
+    color: white;
+}
+.dark button, 
+.dark input {
+    border-color: white;
+    background: none;
+}
+.dark .modal-body{
+    background: #1a202c;
+    color: white;
+}
+.modal-body{
+    background: white;
+    color: #1a202c;
+}
+body{
+    background: none;
+    color: white
+}
+html{
+    background: white;
+    color: #13131399;
 }
 
 button,
@@ -64,6 +121,10 @@ img{
     color: var(--color-text);
     text-decoration: none;
 }
+.dark .footer-list-text,
+.dark .footer-list-text a {
+    color: white;
+}
 
 .footer-list{
     margin-top: 18px;
@@ -79,9 +140,8 @@ img{
 }
 
 .footer-text a{
-    color: var(--color-titles);
+    /* color: var(--color-titles); */
     font-size: 14px;
-
 }
 
 .type-car{
@@ -98,4 +158,66 @@ img{
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 0;
+}
+
+.liked-cars-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+  
+.card {
+    flex: 1 1 calc(50% - 20px); 
+}
+.card img{
+    background: none;
+}
+.dark .card {
+    background: #2d3748;
+    color: white;
+    border: 1px solid #4a5568;
+}
+  
+.card:hover {
+    transform: translateY(-10px); 
+}
+  
+/* ================ Modal ============== */
+
+.modal-backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)
+}   
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+.inputModal {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    &:focus{
+        outline: none;
+    }
+}
+
+.dark .inputModal {
+    background: #2d3748;
+    color: white;
+    border: 1px solid #4a5568;
 }

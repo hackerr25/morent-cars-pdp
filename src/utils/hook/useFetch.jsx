@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export const useFetch = ({ path = "" }) => {
+export const useFetch = (path = "") => {
   const [data, setData] = useState([])
 
   useEffect(() => {
