@@ -22,10 +22,12 @@ const Main = () => {
     <div
       style={{
         padding: "16px",
-        marginTop: "16px",
+        marginTop: "14px",
         borderRadius: "16px",
         boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
         width: "562px",
+        border: "1px solid rgba(255, 255, 255, 0.1)",
+        marginBottom: "5px"
       }}
       className={type.toLowerCase()}
     >
@@ -160,7 +162,6 @@ const Main = () => {
             height: "60px",
             marginTop: "50px",
             borderRadius: "10px",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.8)",
             border: "none",
             cursor: "pointer",
           }}
