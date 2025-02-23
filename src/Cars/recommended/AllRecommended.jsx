@@ -63,7 +63,7 @@ const AllRecommended = () => {
                 </NavLink>
             </div>
             <div className="row mt-3">
-                {data.slice(5, 28).map((item) => (
+                {data.slice(5, 29).map((item) => (
                     <div key={item.id} className="col-md-3" style={{ marginBottom: "30px" }}>
                         <div className="card h-100 py-2" style={{ width: "290px", border: "none" }}>
                             <div className="card-body">

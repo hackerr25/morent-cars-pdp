@@ -26,13 +26,13 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='cars/:id' element={<DetailPage />} />
     <Route element={<ProtectedRoute />} >
       <Route path='car_pay' element={<CarPay />} />
+      <Route path='notification' element={<Notification />} />
     </Route>
     <Route path='*' element={<NotFound />} />
     <Route path='sidebar' element={<Sidebar />} />
     <Route path='likedCars' element={<LikedCars />} />
     <Route path='profile' element={<Profile />} />
     <Route path='searched-cars' element={<SearchedCars />} />
-    <Route path='notification' element={<Notification />} />
   </Route>
 ))
 const App = () => {
