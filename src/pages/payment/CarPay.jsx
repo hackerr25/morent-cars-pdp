@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import bitcoin from "../../assets/Bitcoin.png";
 import Layer from "../../assets/Layer.png";
 import { toast } from "react-toastify";
@@ -477,9 +477,8 @@ function CarPay() {
                           padding: "12px",
                           marginTop: "4px",
                           borderRadius: "8px",
-                          background: theme ? "#4A5568" : "#fff",
                           fontSize: "14px",
-                          color: theme ? "#ddd" : "#555",
+                          border: "1px solid rgba(255, 255, 255, 0.1)",
                         }}
                       />
                     </div>
@@ -494,9 +493,8 @@ function CarPay() {
                           padding: "12px",
                           marginTop: "4px",
                           borderRadius: "8px",
-                          background: theme ? "#4A5568" : "#fff",
                           fontSize: "14px",
-                          color: theme ? "#ddd" : "#555",
+                          border: "1px solid rgba(255, 255, 255, 0.1)",
                         }}
                       />
                     </div>
@@ -511,9 +509,8 @@ function CarPay() {
                           padding: "12px",
                           marginTop: "4px",
                           borderRadius: "8px",
-                          background: theme ? "#4A5568" : "#fff",
                           fontSize: "14px",
-                          color: theme ? "#ddd" : "#555",
+                          border: "1px solid rgba(255, 255, 255, 0.1)",
                         }}
                       />
                     </div>
@@ -528,9 +525,8 @@ function CarPay() {
                           padding: "12px",
                           marginTop: "4px",
                           borderRadius: "8px",
-                          background: theme ? "#4A5568" : "#fff",
                           fontSize: "14px",
-                          color: theme ? "#ddd" : "#555",
+                          border: "1px solid rgba(255, 255, 255, 0.1)",
                         }}
                       />
                     </div>
@@ -574,7 +570,7 @@ function CarPay() {
                   gap: "10px",
                   padding: "16px",
                   borderRadius: "12px",
-                  background: selectedMethod === "bitcoin",
+                  // background: selectedMethod === "bitcoin",
                   cursor: "pointer",
                 }}
                 onClick={() => setSelectedMethod("bitcoin")}
@@ -589,7 +585,7 @@ function CarPay() {
                 <img
                   src={bitcoin}
                   alt="Bitcoin"
-                  style={{ height: "17px", marginLeft: "auto" }}
+                  style={{ height: "17px", marginLeft: "auto", color: "black" }}
                 />
               </div>
             </div>
