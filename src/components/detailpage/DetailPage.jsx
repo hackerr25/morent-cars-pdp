@@ -11,20 +11,24 @@ import { ThemeContext } from "../../utils/context/ThemeContext";
 
 const DetailPage = () => {
   const { id } = useParams();
-  const { addToLiked, isSidebarOpen } = useContext(CarContext);
+  const { addToLiked, isSidebarOpen, isReplaced } = useContext(CarContext);
   const [activeIds, setActiveIds] = useState([]);
   const [data, setData] = useState(null);
   const [mainImg, setMainImg] = useState(null);
   const [recentCars, setRecentCars] = useState([]);
   const [loading, setLoading] = useState(true);
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
 
   const handleButton = (carId) => {
-    setActiveIds((prevIds) =>
-      prevIds.includes(carId)
+    setActiveIds((prevIds) => {
+      const updatedIds = prevIds.includes(carId)
         ? prevIds.filter((item) => item !== carId)
-        : [...prevIds, carId]
-    );
+        : [...prevIds, carId];
+
+      // LocalStorage ga saqlash
+      localStorage.setItem('activeIds', JSON.stringify(updatedIds));
+      return updatedIds;
+    });
 
     if (data) {
       addToLiked({
@@ -39,6 +43,11 @@ const DetailPage = () => {
   const handleCarCard = (imgUrl) => {
     setMainImg(imgUrl);
   };
+
+  useEffect(() => {
+    const storedIds = JSON.parse(localStorage.getItem('activeIds')) || [];
+    setActiveIds(storedIds);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,19 +86,19 @@ const DetailPage = () => {
     width: "100%",
     maxWidth: "1200px",
     borderRadius: "10px",
+    border: "1px solid #13131399"
   };
 
   const textStyle = {
     fontSize: "14px",
   };
 
-
   return (
     <div
       className="container"
       style={{
         position: "relative",
-        paddingTop: "40px",
+        paddingTop: "50px",
         width: "100%",
         transition: "width 0.3s ease-in-out",
       }}
@@ -117,6 +126,7 @@ const DetailPage = () => {
             maxWidth: "1200px",
           }}
         >
+          {/* Asosiy kontent */}
           <div style={{ flex: "1 0 400px", maxWidth: "700px" }} className="info">
             <div className="card" style={{ width: "100%", border: "none" }}>
               <img
@@ -171,7 +181,6 @@ const DetailPage = () => {
 
             <p style={{ fontSize: "15px", color: "#596780", margin: "20px 0" }}>{data.desc}</p>
 
-
             <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "20px" }}>
               <div>
                 <p style={{ margin: "0", color: "#777" }}>Type-Car</p>
@@ -225,7 +234,7 @@ const DetailPage = () => {
               <h2 style={{ margin: 0 }}>Reviews</h2>
               <span
                 style={{
-                  backgroundColor: theme ? "#596780" : "#3563E9",
+                  backgroundColor: "#3563E9",
                   color: "white",
                   padding: "4px 11px",
                   borderRadius: "50%",
@@ -243,7 +252,6 @@ const DetailPage = () => {
               </span>
             </div>
 
-
             {data.comment?.map((review) => (
               <div
                 key={review.id}
@@ -252,6 +260,9 @@ const DetailPage = () => {
                   marginBottom: "20px",
                   borderBottom: `1px solid ${theme ? "#444" : "#E0E0E0"}`,
                   paddingBottom: "20px",
+                  // backgroundColor: theme ? "#2D2D2D" : "#FFFFFF", // Background
+                  padding: "10px",
+                  borderRadius: "10px",
                 }}
               >
                 <img
@@ -269,7 +280,7 @@ const DetailPage = () => {
                   </div>
                   <p style={{ margin: "10px 0 0", ...textStyle }}>{review.commt}</p>
                   <div style={{ display: "flex", alignItems: "center", marginTop: "5px" }}>
-                    {"⭐️".repeat(review.rating)}
+                    {"⭐️".repeat(3)}
                     <span style={{ color: "#CCC", fontSize: "16px" }}>☆</span>
                   </div>
                 </div>
@@ -294,3 +305,4 @@ const DetailPage = () => {
 };
 
 export default DetailPage;
+

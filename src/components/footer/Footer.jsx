@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="container footer-section d-flex justify-content-between align-items-start py-2 px-2">
                 {/* Left side: Logo and Text */}
                 <div className="footer-left d-flex flex-column align-items-start">
-                    <NavLink className="footer-logo d-flex flex-column align-items-start">
+                    <NavLink className="footer-logo d-flex flex-column align-items-start py-2 px-2">
                         <img src={morent} alt="logo" style={{ width: "100px" }} />
                         <p className='footer-text mt-2' style={{ textDecoration: "none" }}>Our vision is to provide convenience <br /> and help increase your sales business.</p>
                     </NavLink>
