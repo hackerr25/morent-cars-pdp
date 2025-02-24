@@ -4,6 +4,7 @@ export const CarContext = createContext();
 
 export const CarProvider = ({ children }) => {
     const [cars, setCars] = useState([]);
+    const [notification, setNotification] = useState(0)
     const [cart, setCart] = useState(JSON.parse(localStorage.getItem('likedCars')) || []);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [cartCount, setCartCount] = useState(cart.length);
@@ -28,7 +29,16 @@ export const CarProvider = ({ children }) => {
         price: 100,
     });
 
-    // Ma'lumotlarni olish
+    useEffect(() => {
+        const storedCount = JSON.parse(localStorage.getItem("notificationCount") || 0);
+        setNotification(storedCount);
+    }, [])
+    const clearNotifications = () => {
+        setNotification(0);
+        localStorage.setItem("notificationCount", JSON.stringify(0));
+    };
+
+
     useEffect(() => {
         const fetchCarsData = async () => {
             try {
@@ -43,7 +53,6 @@ export const CarProvider = ({ children }) => {
         fetchCarsData();
     }, []);
 
-    // Filterlarni qo‘llash
     useEffect(() => {
         let filtered = [...carsData];
 
@@ -67,7 +76,6 @@ export const CarProvider = ({ children }) => {
         setFilteredCars(filtered);
     }, [filters, carsData]);
 
-    // Mashinani yoqtirilganlarga qo‘shish
     const addToLiked = (car) => {
         if (!cart.some(c => c.id === car.id)) {
             const updatedCart = [...cart, car];
@@ -77,20 +85,22 @@ export const CarProvider = ({ children }) => {
         }
     };
 
-    // Mashinani yoqtirilganlardan o‘chirish
     const deleteCar = (carId) => {
         const updatedCart = cart.filter(car => car.id !== carId);
+
         setCart(updatedCart);
-        setCartCount(updatedCart.length);
         localStorage.setItem('likedCars', JSON.stringify(updatedCart));
     };
 
-    // Sidebar-ni ochish/yopish
+    useEffect(() => {
+        setCartCount(cart.length);
+    }, [cart]);
+
+
     const toggleSidebar = () => {
         setIsSidebarOpen(prev => !prev);
     };
 
-    // Mashinalarni almashtirish
     const replaceCar = () => {
         setIsReplaced(prev => !prev);
     };
@@ -110,6 +120,10 @@ export const CarProvider = ({ children }) => {
             toggleSidebar,
             setFilters,
             replaceCar,
+            setIsReplaced,
+            notification,
+            clearNotifications,
+            setNotification,
         }}>
             {children}
         </CarContext.Provider>

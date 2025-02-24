@@ -5,7 +5,7 @@ import './LikedCar.css';
 
 const LikedCars = () => {
     const [likedCars, setLikedCars] = useState([]);
-    const { cart, deleteCar } = useContext(CarContext);
+    const { cart, deleteCar, cartCount } = useContext(CarContext);
 
     useEffect(() => {
         const storedCars = JSON.parse(localStorage.getItem('likedCars')) || [];
@@ -19,7 +19,7 @@ const LikedCars = () => {
     return (
         <div className="liked-cars-container">
             <h3 className="liked-cars-title">
-                {likedCars.length > 0 ? `Liked Cars (${likedCars.length})` : 'Liked Cars 0'}
+                {cartCount > 0 ? `Liked Cars (${cartCount})` : 'Liked Cars 0'}
             </h3>
 
             <div className="liked-cars-grid">

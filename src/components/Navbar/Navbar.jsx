@@ -8,17 +8,16 @@ import morent from "../../assets/morent.png";
 import filter from "../../assets/filter.png";
 import { CarContext } from '../../utils/context/CarContext';
 import { ThemeContext } from '../../utils/context/ThemeContext';
-import cars from "../../utils/data/data.json"
 import "./Navbar.css";
 
 const Navbar = () => {
-    const { toggleSidebar, cartCount, carsData } = useContext(CarContext);
+    const { toggleSidebar, cartCount, carsData, notification, clearNotifications } = useContext(CarContext);
     const [search, setSearch] = useState("");
     const [filteredCars, setFilteredCars] = useState([]);
     const [showDropdown, setShowDropdown] = useState(false);
     const navigate = useNavigate();
     const { theme, toggleTheme } = useContext(ThemeContext);
-    // carsData o'zgarganda filteredCarsni yangilash
+
     useEffect(() => {
         if (carsData.length > 0) {
             setFilteredCars(carsData);
@@ -38,7 +37,6 @@ const Navbar = () => {
         }
     }, [search, carsData]);
 
-    // Qidiruv tugmasi bosilganda navigatsiya
     const handleSearch = () => {
         if (filteredCars.length > 0 && search.trim() !== "") {
             navigate(`/searched-cars?search=${encodeURIComponent(search)}`);
@@ -46,7 +44,6 @@ const Navbar = () => {
         }
     };
 
-    // Dropdown elementini tanlash
     const handleSelectCar = (carName) => {
         setSearch(carName);
         setShowDropdown(false);
@@ -171,36 +168,29 @@ const Navbar = () => {
                             </button>
                         )}
                     </NavLink>
-                    <NavLink to={"/notification"} style={{ color: "black" }}>
-                        {({ isActive }) => (
-                            <button
-                                className={isActive ? "active" : ""}
-                                style={{
-                                    position: "relative",
-                                    borderRadius: "50%",
-                                    padding: "5px",
-                                    border: "1px solid #C3D4E966"
-                                }}
-                            >
-                                <NotificationsIcon sx={{ width: '25px', height: "25px", color: "#596780" }} />
-                                {cars.newCars && (
-                                    <span
-                                        className="badge"
-                                        style={{
-                                            position: "absolute",
-                                            top: "-5px",
-                                            right: "-10px",
-                                            borderRadius: "10px",
-                                            background: "#FF4423",
-                                            fontSize: "10px"
-                                        }}
-                                    >
-                                        {cars.newCars.length}
-                                    </span>
-
-                                )}
-                            </button>
-                        )}
+                    <NavLink to={"/notification"} style={{ color: "black" }} onClick={clearNotifications}>
+                        <button
+                            style={{
+                                position: "relative",
+                                borderRadius: "50%",
+                                padding: "5px",
+                                border: "1px solid #C3D4E966"
+                            }}
+                        >
+                            <NotificationsIcon sx={{ width: '25px', height: "25px", color: "#596780" }} />
+                            {notification > 0 && (
+                                <span className="badge" style={{
+                                    position: "absolute",
+                                    top: "-5px",
+                                    right: "-10px",
+                                    borderRadius: "10px",
+                                    background: "#FF4423",
+                                    fontSize: "10px"
+                                }}>
+                                    {notification}
+                                </span>
+                            )}
+                        </button>
                     </NavLink>
                     <NavLink to={"/profile"} style={{ color: "black" }}>
                         {({ isActive }) => (
