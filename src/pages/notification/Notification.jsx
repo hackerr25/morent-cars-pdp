@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import DonutLargeIcon from '@mui/icons-material/DonutLarge';
 import LocalGasStationIcon from '@mui/icons-material/LocalGasStation';
 import cars from "../../utils/data/data.json";
 
 const Notification = () => {
-    const [activeIds, setActiveIds] = useState([]);
 
     const splitText = (text, count) => {
         const words = text.split(" ");
@@ -13,15 +12,6 @@ const Notification = () => {
             ? words.slice(0, count).join(" ") + "..."
             : text;
     };
-
-    // const handleButton = (id) => {
-    //     if (!activeIds.includes(id)) {
-    //         setActiveIds((prevIds) => [...prevIds, id]);
-    //     } else {
-    //         setActiveIds((prevIds) => prevIds.filter((item) => item !== id));
-    //     }
-    // };
-
     return (
         <div>
             <div className='container' style={{ marginTop: "80px" }}>
@@ -36,12 +26,11 @@ const Notification = () => {
                         fontWeight: "600",
                         marginBottom: "0px",
                         marginTop: "20px"
-                    }}>New Cars</p>
+                    }}>New Cars {cars.newCars.length} </p>
                 </div>
                 <div className="row mt-3">
                     {cars.newCars.map((item) => (
                         <div key={item.id} className="col-md-3" style={{ marginBottom: "30px", position: "relative" }}>
-                            {/* Badge (Yorliq) */}
                             {item && (
                                 <div style={{
                                     position: "absolute",

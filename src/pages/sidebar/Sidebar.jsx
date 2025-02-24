@@ -4,7 +4,7 @@ import { CarContext } from "../../utils/context/CarContext";
 import { ThemeContext } from './../../utils/context/ThemeContext';
 
 const Sidebar = () => {
-    const { isSidebarOpen, setIsReplaced } = useContext(CarContext);
+    const { isSidebarOpen, isReplaced, setIsReplaced } = useContext(CarContext);
     const { theme } = useContext(ThemeContext);
     const isDarkMode = theme === "dark";
 
@@ -38,11 +38,6 @@ const Sidebar = () => {
     }
 
     if (!isSidebarOpen) return null;
-
-    const handleReplace = () => {
-        setIsReplaced((prev) => !prev)
-    }
-
     const sidebarStyle = {
         position: "absolute",
         top: "0",
@@ -183,7 +178,7 @@ const Sidebar = () => {
                 </div>
             </div>
             <div style={buttonContainerStyle} className="replace_btn">
-                <button style={{ color: "#fff" }} onClick={handleReplace}>Replace</button>
+                <button style={{ color: "#fff" }} onClick={() => setIsReplaced(!isReplaced)}>Replace</button>
             </div>
         </div>
     );

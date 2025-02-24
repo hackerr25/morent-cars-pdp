@@ -13,20 +13,20 @@ const Profile = () => {
         confirmPassword: ''
     });
 
-    useEffect(() => {
+    useEffect((e) => {
         const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
+        if (storedUser && !user) {
+            const parsedUser = JSON.parse(storedUser);
+            setUser(parsedUser);
+            setData((prev) => ({ ...prev, name: parsedUser.name }));
         }
-    }, [setUser]);
+    }, [setUser, user]);
 
-    const closeModal = () => {
-        navigate('/');
-    };
+    const closeModal = () => navigate('/');
 
     const handleSignOut = () => {
         localStorage.removeItem('user');
-        setUser(false);
+        setUser(null);
         toast.success('Logout successful!');
         closeModal();
     };
@@ -73,14 +73,11 @@ const Profile = () => {
                         fontSize: "1px"
                     }}>
                         <CloseIcon />
-
                     </button>
                 </div>
                 <form onSubmit={handleSubmit} className='mt-5'>
                     <label>
-                        <p style={{ marginBottom: "0", textAlign: "left" }}>
-                            Name:
-                        </p>
+                        <p style={{ marginBottom: "0", textAlign: "left" }}>Name:</p>
                         <input
                             className='inputModal'
                             type='text'
@@ -91,9 +88,7 @@ const Profile = () => {
                         />
                     </label>
                     <label>
-                        <p style={{ marginBottom: "0", textAlign: "left" }}>
-                            Password:
-                        </p>
+                        <p style={{ marginBottom: "0", textAlign: "left" }}>Password:</p>
                         <input
                             className='inputModal'
                             type='password'
@@ -104,9 +99,7 @@ const Profile = () => {
                         />
                     </label>
                     <label>
-                        <p style={{ marginBottom: "0", textAlign: "left" }}>
-                            Confirm Password:
-                        </p>
+                        <p style={{ marginBottom: "0", textAlign: "left" }}>Confirm Password:</p>
                         <input
                             className='inputModal'
                             type='password'
@@ -140,7 +133,7 @@ const Profile = () => {
                     </div>
                 </form>
             </div>
-        </div >
+        </div>
     );
 };
 
